@@ -1,0 +1,910 @@
+@import "reset";   
+@import "slick";
+@import "slick-theme"; 
+@import "cards";
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;700&family=Russo+One&display=swap');
+
+html {
+    overflow: hidden;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Russo One';
+    background-color: #171515;
+    font-size: 24px;
+    color: #FFFFFF;
+    // height: 1000px;
+    scroll-behavior: smooth;
+}
+
+.none{
+    display: none;
+}
+.all {
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.parallax {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    width: 100vw;
+    transform-style: inherit;
+    box-sizing: border-box;
+}
+
+.parallax::before {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 0;
+    left: -13px;
+    transform-origin: center;
+    min-height: 100vh;
+    z-index: -1;
+    background-position: center;
+    background-image: url(../img/moution.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateZ(-1px) scale(2);
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background-color: #171515;
+    scroll-behavior: smooth;
+}
+
+.title {
+    line-height: 52px;
+    letter-spacing: 0.0175em;
+    font-size: 24px;
+    text-shadow: 4px 6px 7px rgba(0, 0, 0, 0.25);
+    display: inline;
+    position: relative;
+    margin: 0 auto;
+    white-space: nowrap;
+    &::after {
+        content: "";
+        position: absolute;
+        border-bottom: solid 12px #55CD42;
+        width: 100%;
+        bottom: 0px;
+        left: 0;
+        z-index: -1;
+    }
+
+    &.left {
+        text-align: left;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    // max-width: 1240px;
+    max-width: 90%;
+}
+/////////////////////////////////////////////
+.burger {
+    display: block;
+    cursor: pointer;
+    // position: absolute;
+    width: 80px;
+    height: 80px;
+
+    // max-width: 100px; //Выше менять размер бургера
+    // max-height: 100px;
+    input {
+        display: none;
+    }
+
+    path {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        --length: 24;
+        --offset: -38;
+        stroke-dasharray: var(--length) var(--total-length);
+        stroke-dashoffset: var(--offset);
+        transition: all .8s cubic-bezier(.645, .045, .355, 1);
+    }
+
+    circle {
+        fill: #fff3;
+        opacity: 0;
+        transition: .1s linear;
+    }
+
+    // &:hover circle {
+    //     //Отключить эффект круга при наведени
+    //     opacity: 1;
+    // }
+
+    .cross input:checked+svg {
+
+        .line--1,
+        .line--3 {
+            --length: 22.627416998;
+        }
+
+        .line--2 {
+            --length: 0;
+        }
+    }
+
+    .debug {
+        display: none;
+    }
+}
+
+.menu--3 {
+    // background-color: #00aef6;
+    display: none;
+
+    .line--1,
+    .line--3 {
+        --total-length: 126.38166809082031;
+    }
+
+    .line--2 {
+        --total-length: 80;
+    }
+
+    input:checked+svg {
+
+        .line--1,
+        .line--3 {
+            --offset: -109.1770175568;
+        }
+    }
+}
+
+.back input:checked+svg {
+
+    .line--1,
+    .line--3 {
+        --length: 8.602325267;
+    }
+}
+
+/////////
+
+header {
+    display: flex;
+    padding: 60px 0;
+    justify-content: space-between;
+    align-items: center;
+    // transform-style: flat;
+    // position: fixed;
+}
+
+.header_item {
+    display: flex;
+    column-gap: 71px;
+}
+
+.header_links {
+    font-size: 18px;
+    line-height: 19px;
+    color: #FFFFFF;
+    transition: .2s linear;
+
+    &:hover {
+        color: #55CD42;
+    }
+    &.active{
+        color: #55CD42;
+    }
+}
+
+.hed2{
+    padding: 36px 0;
+    display: none;
+    // transform: translateY(-50%);
+    scroll-behavior: smooth;
+    &.fixed{
+        display: block;
+        position: fixed;
+        backdrop-filter:blur(12px);
+        z-index: 1;
+        left: 0;
+        top: -2px;
+        width: calc(100% - 17px);
+    }
+    .container{
+        display: flex;
+        align-items:center;
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+}
+
+.number_links {
+    font-size: 18px;
+    line-height: 19px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.inner_position_el {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inner_block {
+    margin-top: 100px;
+    // padding-top: 300px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 46px;
+}
+
+.title_main {
+    font-size: 46px;
+    line-height: 55px;
+    letter-spacing: 0.0175em;
+    color: #FFFFFF;
+    max-width: 700px;
+}
+
+.text_main {
+    font-family: 'Overpass';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 52px;
+    letter-spacing: 0.0195em;
+    color: #F7F7F7;
+    max-width: 800px;
+    padding-bottom: 24px;
+}
+
+.btn_order {
+    display: inline;
+    padding: 22px 52px;
+    background-color: #55CD42;
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height */
+    letter-spacing: 0.0175em;
+    color: #1A2E1D;
+    transition: .2s linear;
+
+    &:hover {
+        background-color: #1A2E1D;
+        color: #55CD42;
+    }
+}
+
+.inner_social {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 8px;
+    background: #09090961;
+    border-radius: 10px;
+    margin-right: 178px;
+
+    svg {
+        max-height: 30px;
+        width: 30px;
+        fill: #d7d7d7;
+        display: block;
+        transition: .2s linear;
+
+        &:hover {
+            fill: #55CD42;
+        }
+    }
+}
+
+.wait {
+    position: relative;
+    // height: 110vh;
+    // z-index: 1;
+    // height:;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 120px;
+}
+
+.wait_block {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wait_type {
+    text-align: left;
+}
+
+.wait_text {
+    font-family: 'Overpass';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 52px;
+    letter-spacing: 0.0175em;
+
+    color: #F7F7F7;
+    max-width: 580px;
+    padding-top: 44px;
+    span{
+        color:#55CD42;
+    }
+}
+
+.wait_img img {
+    border-radius: 6px;
+    background-size: cover;
+    max-width: 455px;
+    height: 608px;
+}
+
+.blur {
+    position: absolute;
+    width: 400px;
+    height: 550px;
+    right: 10%;
+    top: 10%;
+    z-index: -2;
+    background: radial-gradient(52.02% 44.88% at 50.12% 55.12%, rgba(73, 137, 165, 0.85) 9.38%, rgba(186, 205, 66, 0.85) 48.44%, rgba(66, 86, 194, 0.85) 71.87%, rgba(85, 205, 66, 0.85) 88.13%, rgba(217, 217, 217, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+    filter: blur(300px);
+}
+
+.water {
+    height: 100vh;
+    width: 100%;
+    
+    // z-index: 4;
+}
+.programm { 
+    position: relative;
+    min-height:100vh;
+    width: 100%;
+    &::before {    
+        content:'';
+        background: url(../img/moution.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        filter: blur(12px) brightness(0.4);
+        position: absolute;
+        inset: -1px;
+        z-index: 1;
+        overflow: hidden;  
+    }
+    // &::after{
+    //     content:'';
+    //     background: url(../img/water.png);
+    //     animation: water2 0.5s linear infinite;
+    //     position: absolute;
+    //     background-repeat: no-repeat;
+    //     background-position:center;
+    //     background-size:cover;
+    //     inset: -1px;
+    //     z-index: 0;
+        
+    // }
+}
+.arrows_block{
+    position: relative;
+    // bottom: 0;
+}
+.programm_container {
+    position: relative;
+    z-index: 3;
+    padding-top: 90px;
+    display: flex;
+    column-gap: 60px;
+    justify-content: space-around;
+       // align-items: center;
+    // left: 10%;
+}
+
+// .programm_info {
+//     text-align: center;
+//     overflow: hidden;
+//     position: relative;
+//     width: 700px;
+//     height: 500px;
+//     border-radius: 10px;
+//     z-index: 1;
+//     &::before{
+//         content:'Подробнее';
+//         background: url(../img/raft.jpg);
+//         background-repeat: no-repeat;
+//         background-position: center;
+//         background-size: cover;
+//         // display: block;
+//         position: absolute;
+//         inset:0;
+//         // z-index: 2;
+//         // background-color:#55CD42;
+       
+//         transition: 0.3s ease-in-out;
+//         // height: 80px;
+        
+//         width: 100%;
+//         // overflow: hidden;
+//     }
+//     &::after{
+//         content:'Подробнее';
+//         position: absolute;
+//         filter: blur(12px) brightness(0.4);
+//         bottom: 0;
+//         left: 0;
+//         display: block;
+//         // background-color:#F7F7F7;
+//         top: 80%;
+//         width: 100%;
+//         z-index: 3;
+//     }
+//     img {
+        
+//     }
+// }
+
+
+
+// .programm_more {
+//     width: 100%;
+//     height: 80px;
+//     border-radius: 10px;
+//     // inset:-5px;
+//     bottom: 0;
+//     // top: 85%;
+//     overflow: hidden;
+//     position: absolute;
+//     // top: 20%;
+//     // bottom: -1px;
+//     // z-index: 3;
+//     border-radius:10px;
+//     font-family: 'Overpass';
+//     font-weight: 400;
+//     letter-spacing: 0.0175em;
+//     background-color:white;
+//     // backdrop-filter: blur(62px);
+//     filter: blur(12px) brightness(0.4);
+//     transition: 0.3s ease-in-out;
+
+//     &:hover {
+//         // height: calc(100% + 1px);
+//         inset: -5px;
+//         // overflow: hidden;
+
+//         .more_text {
+//             visibility: visible;
+//             opacity: 1;
+//         }
+
+//         .more_title {
+//             opacity: 0;
+//         }
+//     }
+// }
+
+// .more_title {
+    
+// }
+
+// .more_text {
+//     position: absolute;
+//     bottom: 0;
+//     transition: 0.3s ease-in-out;
+//     visibility: hidden;
+//     opacity: 0;
+//     padding: 40px;
+//     line-height: 52px;
+//     font-size: 20px;
+//     text-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4);
+// }
+
+
+
+@keyframes water2 {
+    0% {
+        background-position: -10% -10%;
+    }
+
+    100% {
+        background-position: 20% 100%;
+    }
+}
+
+.advantage {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 120px;
+    .title {
+        margin-bottom: 80px;
+    }
+}
+
+.advantage_item {
+    display: flex;
+    column-gap: 80px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 80px;
+}
+
+.advantage_items {
+    display: flex;
+    flex-direction: column;
+}
+
+.advantage_block {
+    display: flex;
+    align-items: center;
+    column-gap: 56px;
+    margin-left: 18px;
+
+    img {
+        height: 68px;
+        width: auto;
+    }
+}
+
+.advantage_text {
+    margin-top: 16px;
+    max-width: 330px;
+
+    font-family: 'Overpass';
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 0.0175em;
+    color: #F7F7F7;
+}
+
+.price {
+    padding-bottom: 180px;
+    text-align: center;
+    .container{
+        overflow: hidden;
+    }
+}
+
+.price_item {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price_item_card {
+    overflow: hidden;
+    min-width: 351px;
+    height: 480px;
+    border-radius: 10px;
+    position: relative;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        .price_items {
+            transform: scale(1.1);
+            &::before {
+                content: '';
+                background-color: black;
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+                transition: .3s ease-in-out;
+                opacity: .5;
+            }
+        }
+
+        .price_subtite {
+            opacity: 0;
+        }
+
+        .price_text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+.price_items {
+    font-family: 'Overpass';
+    text-align: center;
+    font-size: 18px;
+    line-height: 52px;
+    display: block;
+    position: absolute;
+    inset: 0;
+    letter-spacing: 0.0175em;
+    background-color: black;
+    background: url('../img/tamak.png');
+    background-position: 100% center;
+    background-size:cover;
+    // background-position:0 0;
+    transition: .3s ease-in-out;
+
+    &::before {
+        content: '';
+        background-color: black;
+        position: absolute;
+        inset: 0;
+        opacity: .3;
+    }
+}
+
+.price_title {
+    padding-top: 30px;
+    padding-bottom: 28px;
+    font-family: 'Russo One';
+    font-size: 24px;
+    position: relative;
+    color: #F7F7F7;
+    z-index: 1;
+    position: relative;
+    &::after {
+        content: '1000 ₽ с человека';
+        padding-top: 36px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 60px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 0.0175em;
+        color: #FFFFFF;
+        white-space: nowrap;
+    }
+}
+
+.price_subtite {
+    color: #FFFFFF;
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    bottom: 40px;
+    font-family: 'Overpass';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 52px;
+    font-size: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.price_text {
+    position: absolute;
+    display: block;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    font-family: 'Overpass';
+    font-style: normal;
+    font-weight: 400;
+    padding: 32px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.0175em;
+    color: #F7F7F7;
+}
+// .price_items {
+//     font-family: 'Overpass';
+//     text-align: center;
+//     font-size: 18px;
+//     line-height: 52px;
+//     overflow: hidden;
+//     letter-spacing: 0.0175em;
+//     width: 351px;
+//     height: 480px;
+//     border-radius: 10px;
+//     background: url('../img/tamak.png');
+//     background-size: cover;
+//     background-position: center;
+//     position: relative;
+
+//     // img{
+//     //     background-size:cover;
+
+//     //     height: 100%;
+
+//     // }
+
+// }
+
+// .price_title {
+//     padding-top: 30px;
+//     font-family: 'Russo One';
+//     // position: relative;
+//     // z-index: 2;
+// }
+
+// .price_subtite {
+//     opacity: 1;
+
+// }
+
+// .price_text {
+//     opacity: 0;
+//     transition: 0.3s ease-in-out;
+//     font-family: 'Overpass';
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 20px;
+//     line-height: 52px;
+//     letter-spacing: 0.0175em;
+//     padding: 32px;
+//     color: #F7F7F7;
+// }
+
+// .price_more {
+//     position: absolute;
+//     height: 140px;
+//     width: 100%;
+//     backdrop-filter: blur(12px);
+//     bottom: -1px;
+//     line-height: 140px;
+//     border-radius: 10px;
+//     transition: 0.3s ease-in-out;
+
+//     &:hover {
+//         height: calc(100% + 1px);
+
+//         .price_title {
+//             opacity: 1;
+//         }
+
+//         .price_text {
+//             opacity: 1;
+//             position: absolute;
+//             bottom: 0;
+//         }
+
+//         .price_subtite {
+//             opacity: 0;
+//         }
+//     }
+// }
+
+.delivery {
+    background: url('../img/moution.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    padding: 48px 0;
+}
+
+.services_title {
+    margin-top: 60px;
+    font-family: 'Russo One';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 0.0175em;
+    color: #F7F7F7;
+    text-align: left;
+}
+
+.order {
+    width: 539px;
+    height: 563px;
+    backdrop-filter: blur(12px);
+    border-radius: 6px;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 47px;
+    font-family: 'Overpass';
+    font-style: normal;
+    line-height: 36px;
+    letter-spacing: 0.0175em;
+    text-align: center;
+}
+
+.order_value {
+    height: 69px;
+    width: 100%;
+
+    font-size: 15px;
+
+    border-radius: 6px;
+    text-align: center;
+    padding: 0 32px;
+    color: #657489;
+
+}
+
+.order_btn {
+    background-color: #55CD42;
+    height: 64px;
+    width: 100%;
+    font-family: 'Russo One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.0175em;
+
+    color: #F7F7F7;
+
+    &.disable {
+        background-color: #353935;
+    }
+}
+
+.order_text {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #A5A5A5;
+    margin-top: 10px;
+}
+
+// Footer
+
+footer {
+    .header_links {
+        color: #A5A5A5;
+        font-size: 16px;
+    }
+}
+
+.footer_position {
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer_links {
+    padding-top: 56px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.footer_social {
+    display: flex;
+
+    column-gap: 30px;
+
+    svg {
+        width: 30px;
+        height: 30px;
+        fill: #d7d7d7;
+        transition: .2s linear;
+
+        &:hover {
+            fill: #55CD42;
+        }
+    }
+}
+
+.my_link {
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.0175em;
+
+    color: #55CD42;
+
+}
+
+@import "mobile_first";
