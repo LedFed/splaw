@@ -1524,7 +1524,8 @@ footer .header_links {
   .slick-dotted.slick-slider {
     margin-bottom: 70px;
   }
-  .slick-prev, .slick-next {
+  .slick-prev,
+.slick-next {
     bottom: 32px;
   }
   .advantage {
@@ -1620,5 +1621,59 @@ footer .header_links {
   }
   .slick-next {
     right: 32%;
+  }
+  .advantage {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .advantage_item {
+    row-gap: 28px;
+    padding-top: 40px;
+  }
+  .advantage_block {
+    -moz-column-gap: 42px;
+         column-gap: 42px;
+  }
+  .advantage_title {
+    font-size: 20px;
+  }
+  .advantage_text {
+    margin-top: 12px;
+    line-height: 30px;
+  }
+  .delivery {
+    padding: 0;
+  }
+  .delivery .container {
+    margin: 0;
+    padding: 0;
+  }
+  .order {
+    width: 100%;
+    padding: 0 12px;
+    height: auto;
+    row-gap: 16px;
+    border-radius: 0;
+  }
+  .order_text {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 0;
+    padding-bottom: 12px;
+  }
+  .order_btn {
+    font-size: 16px;
+  }
+  .footer_position {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    padding: 0;
+  }
+  .footer_position .header_item {
+    display: none;
+  }
+  .footer_position .footer_links {
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 }
