@@ -1549,9 +1549,12 @@ footer .header_links {
   }
 }
 @media (max-width: 565px) {
+  .parallax header {
+    padding: 0;
+  }
   .parallax .inner_block {
-    margin-top: 60px;
-    gap: 40px;
+    margin-top: 50px;
+    gap: 34px;
   }
   .title_main {
     font-size: 42px;
@@ -1569,5 +1572,17 @@ footer .header_links {
   }
   .btn_order {
     padding: 16px 36px;
+  }
+  .wait {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+  .wait_block {
+    padding-top: 16px;
+  }
+  .wait_text {
+    padding-top: 8px;
+    line-height: 38px;
+    padding-bottom: 28px;
   }
 }
