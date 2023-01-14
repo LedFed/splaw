@@ -1504,12 +1504,18 @@ footer .header_links {
     max-width: 100%;
   }
   .mode:nth-child(even) p {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin: 0;
     position: absolute;
     left: 32px;
     font-size: 16px;
   }
   .mode:nth-child(odd) p {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin: 0;
     position: absolute;
     right: 14px;
@@ -1549,6 +1555,14 @@ footer .header_links {
   }
 }
 @media (max-width: 565px) {
+  .container {
+    padding: 0 12px;
+    max-width: 100%;
+  }
+  .menu--3 {
+    left: -12px;
+    position: relative;
+  }
   .parallax header {
     padding: 0;
   }
@@ -1580,9 +1594,31 @@ footer .header_links {
   .wait_block {
     padding-top: 16px;
   }
+  .wait_img img {
+    height: 440px;
+  }
   .wait_text {
     padding-top: 8px;
     line-height: 38px;
     padding-bottom: 28px;
+  }
+  .programm_container {
+    padding-top: 40px;
+  }
+  .programm_box {
+    height: 440px;
+  }
+  .more_title {
+    font-size: 22px;
+  }
+  .more_text {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .slick-prev {
+    left: 32%;
+  }
+  .slick-next {
+    right: 32%;
   }
 }
