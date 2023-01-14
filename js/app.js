@@ -1,11 +1,28 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     "use strict"
     let lastScroll = 0;
     const header = document.querySelector('.hed2');
     let all = document.querySelector('.all');
+
+    let burger = document.querySelector('.menu');
+    let navigation = document.querySelector('.header_list');
+    let checker = burger.querySelector('input[type=checkbox]');
+
+    burger.addEventListener('change', () => {
+        event.preventDefault();
+        navigation.classList.toggle('active');
+        burger.classList.toggle('active');
+        navigation.childNodes.forEach(e => {
+            e.addEventListener('click', () => {
+                navigation.classList.remove('active');
+                burger.classList.remove('active');
+                checker.checked = false;
+            })    
+        });
+    })
+
     all.addEventListener('scroll', () => {
-        
+
         let scrollDistance = parseInt(all.scrollTop);
         if (scrollDistance <= lastScroll && !header.classList.contains('fixed')) {
             header.classList.add('fixed');
@@ -14,29 +31,29 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.remove('fixed')
         }
 
-        (scrollDistance >= 350) ? 
+        (scrollDistance >= 350) ?
             lastScroll = scrollDistance
-                : lastScroll = -1;
+            : lastScroll = -1;
     })
 
     $(window).ready(function () {
         $("[data-slider]").slick({
             isFinite: false,
             fade: true,
-            infinite:false,
+            infinite: false,
             slideToShow: 1,
             slideToScroll: 1,
             arrows: true,
             dots: true,
             autoplay: false,
-            appendDots:'.route',
-            appendArrows:'.arrows_block',
-            dotsClass:'progress',
+            appendDots: '.route',
+            appendArrows: '.arrows_block',
+            dotsClass: 'progress',
         });
         $("[data-price]").slick({
             isFinite: false,
             fade: false,
-            infinite:false,
+            infinite: false,
             slideToShow: 1,
             slideToScroll: 1,
             arrows: false,
@@ -45,55 +62,53 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-// const track = document.getElementById(".price_item");
-let track = document.querySelector('.price_item');
+    // const track = document.getElementById(".price_item");
+    let track = document.querySelector('.price_item');
 
-const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+    const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
 
-const handleOnUp = () => {
-  track.dataset.mouseDownAt = "0";  
-  track.dataset.prevPercentage = track.dataset.percentage;
-}
+    const handleOnUp = () => {
+        track.dataset.mouseDownAt = "0";
+        track.dataset.prevPercentage = track.dataset.percentage;
+    }
 
-const handleOnMove = e => {
-  if(track.dataset.mouseDownAt === "0") return;
-  
-  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth;
-  
-  const percentage = (mouseDelta / maxDelta) * -100,
-        nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-  
-  track.dataset.percentage = nextPercentage;
-  
-  track.animate({
-    transform: `translate(${nextPercentage}%, 0%)`
-  }, { duration: 1200, fill: "forwards" });
-  
-  for(const image of track.getElementsByClassName("price_items")) {
-    image.animate({
-      backgroundPosition: `${100 + nextPercentage}% center`
-    }, { duration: 1200, fill: "forwards" });
-  }
-}
+    const handleOnMove = e => {
+        if (track.dataset.mouseDownAt === "0") return;
 
-/* -- Had to add extra lines for touch events -- */
+        const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+            maxDelta = window.innerWidth;
 
-track.onmousedown = e => handleOnDown(e);
+        const percentage = (mouseDelta / maxDelta) * -100,
+            nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+            nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 
-track.ontouchstart = e => handleOnDown(e.touches[0]);
+        track.dataset.percentage = nextPercentage;
 
-track.onmouseup = e => handleOnUp(e);
+        track.animate({
+            transform: `translate(${nextPercentage}%, 0%)`
+        }, { duration: 1200, fill: "forwards" });
 
-track.ontouchend = e => handleOnUp(e.touches[0]);
+        for (const image of track.getElementsByClassName("price_items")) {
+            image.animate({
+                backgroundPosition: `${100 + nextPercentage}% center`
+            }, { duration: 1200, fill: "forwards" });
+        }
+    }
 
-track.onmousemove = e => handleOnMove(e);
+    /* -- Had to add extra lines for touch events -- */
 
-track.ontouchmove = e => handleOnMove(e.touches[0]);
-    
-console.log(window);
-console.log(track);
+    track.onmousedown = e => handleOnDown(e);
+
+    track.ontouchstart = e => handleOnDown(e.touches[0]);
+
+    track.onmouseup = e => handleOnUp(e);
+
+    track.ontouchend = e => handleOnUp(e.touches[0]);
+
+    track.onmousemove = e => handleOnMove(e);
+
+    track.ontouchmove = e => handleOnMove(e.touches[0]);
+
     // window.onload = function () {
     //     const parallax = document.querySelector('.parallax');
 
@@ -253,3 +268,6 @@ console.log(track);
     // })
 
 })
+
+// let burger = document.querySelector('.menu [type="checkbox"]')
+
