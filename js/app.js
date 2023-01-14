@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     "use strict"
+    // event.preventDefault();
     let lastScroll = 0;
     const header = document.querySelector('.hed2');
     let all = document.querySelector('.all');
@@ -21,20 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     })
 
-    all.addEventListener('scroll', () => {
+    // all.addEventListener('scroll', () => {
 
-        let scrollDistance = parseInt(all.scrollTop);
-        if (scrollDistance <= lastScroll && !header.classList.contains('fixed')) {
-            header.classList.add('fixed');
+    //     let scrollDistance = parseInt(all.scrollTop);
+    //     if (scrollDistance <= lastScroll && !header.classList.contains('fixed')) {
+    //         header.classList.add('fixed');
 
-        } else if (scrollDistance > lastScroll && header.classList.contains('fixed')) {
-            header.classList.remove('fixed')
-        }
+    //     } else if (scrollDistance > lastScroll && header.classList.contains('fixed')) {
+    //         header.classList.remove('fixed')
+    //     }
 
-        (scrollDistance >= 350) ?
-            lastScroll = scrollDistance
-            : lastScroll = -1;
-    })
+    //     (scrollDistance >= 350) ?
+    //         lastScroll = scrollDistance
+    //         : lastScroll = -1;
+    // })
 
     $(window).ready(function () {
         $("[data-slider]").slick({
@@ -49,16 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
             appendDots: '.route',
             appendArrows: '.arrows_block',
             dotsClass: 'progress',
-        });
-        $("[data-price]").slick({
-            isFinite: false,
-            fade: false,
-            infinite: false,
-            slideToShow: 1,
-            slideToScroll: 1,
-            arrows: false,
-            dots: false,
-            autoplay: false,
         });
     });
 
@@ -109,124 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     track.ontouchmove = e => handleOnMove(e.touches[0]);
 
-    // window.onload = function () {
-    //     const parallax = document.querySelector('.parallax');
-
-    //     const moution = document.querySelector('.moution img');
-
-    //     console.log(moution);
-
-    //     const Formain = 40
-    //     const speed = 0.05;
-
-    // }
-
-    // const bgTree = document.getElementById("parallax");
-
-    // //При движении мышью вызываем функцию, которая меняет положение фона
-    // document.addEventListener("mousemove", function (e) { MoveBackground(e); });
-
-    // function MoveBackground(e)
-    // {
-    //    //Рассчитываем, насколько далеко от начала оси находится курсор: 0 - 0, 0.5 - середина экрана, 1 - ширина экрана (например, 1920)
-    //    //Затем умножаем получившееся число на 30 - настолько будет сдвигаться фон
-    //    //Например, если курсор находится посередине страницы (0.5), то при умножении получится 15
-    //    //Далее отнимаем половину от 30, чтобы фон мог двигаться как влево, так и вправо
-    //    let offsetX = (e.clientX / window.innerWidth * 30) - 15;
-    //    let offsetY = (e.clientY / window.innerHeight * 10) - 5;
-
-    //    //Меняем положение фона
-    //    bgTree.setAttribute("style", "background-position: " + offsetX + "px " + offsetY + "px;");
-
-
-    let list = document.querySelectorAll('ul.progress li'),
-        next = document.getElementById('next'),
-        content = document.querySelectorAll('.mode'),
-        completed = 0;
-
-    // let vedro = (b) => {
-    //     for (let i = 0; i < 15; i++) {
-    //         list[i].children[0].classList.add('grey');
-    //         list[i].children[0].classList.remove('green');
-    //         list[i].children[0].classList.remove('activated');
-    //     }
-    //     b = (b === 1) ? 1 : b;
-    //     if (b > list.length) return;
-    //     for (var i = 0; i < b; i++) {
-    //         list[i].children[0].classList.remove('grey');
-    //         list[i].children[0].classList.add('green');
-    //         if (i % 2 === 0) {
-    //             list[i].children[0].classList.add('activated');
-    //         }
-    //     }
-    // }
-
-    // content.forEach((e, b) => {
-    //     e.addEventListener('click', function () {
-    //         console.log(b);
-    //         switch (b) {
-    //             case 0:
-    //                 vedro(1);
-    //                 break;
-    //             case 1:
-    //                 vedro(3);
-    //                 break;
-    //             case 2:
-    //                 vedro(5);
-    //                 break;
-    //             case 3:
-    //                 vedro(7);
-    //                 break;
-    //             case 4:
-    //                 vedro(9);
-    //                 break;
-    //             case 5:
-    //                 vedro(11);
-    //                 break;
-    //             case 6:
-    //                 vedro(13);
-    //                 break;
-    //             case 7:
-    //                 vedro(15);
-    //                 break;
-    //         }
-    //     });
-    // }, false);
-
-    // next.addEventListener('click', function () {
-    //     if (document.querySelector('.activated') == null) {
-    //         vedro(2);
-    //     } else {
-    //         switch (document.querySelectorAll('.activated').length) {
-    //             case 0:
-    //                 vedro(1);
-    //                 break;
-    //             case 1:
-    //                 vedro(3);
-    //                 break;
-    //             case 2:
-    //                 vedro(5);
-    //                 break;
-    //             case 3:
-    //                 vedro(7);
-    //                 break;
-    //             case 4:
-    //                 vedro(9);
-    //                 break;
-    //             case 4:
-    //                 vedro(11);
-    //                 break;
-    //             case 4:
-    //                 vedro(13);
-    //                 break;
-    //             case 4:
-    //                 vedro(15);
-    //                 break;
-
-    //         }
-    //     }
-    // }, false);
-
     //Принимает два параметра функцию и опцию '0,7'
     const observer = new IntersectionObserver((entry) => {
         entry.forEach((entryes) => {
@@ -250,22 +123,119 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // Вешаем обработчик на все ссылки 
-    // document.querySelector('.header_item').addEventListener('click', (event) => {
-    //     // Если ссылка есть по клику то получаем ее href без "#" 
-    //     if (event.target.classList.contains('smart_link')) {
-    //         // event.preventDefault();
-    //         // const id = getId(event.target)
-    //         const id = event.target.getAttribute('href').replace('#', '');
-    //         console.log(document.getElementById(id).offsetTop);
-    //         console.log(event);
-    //         // Скролимся к блоку 
-    //         window.scrollTo({
-    //             top: document.getElementById(id).offsetTop - 30,
-    //             behavior: 'smooth',
+    document.querySelector('.header_item').addEventListener('click', (event) => {
+        // Если ссылка есть по клику то получаем ее href без "#" 
+        if (event.target.classList.contains('smart_link')) {
+            // event.preventDefault();
+            // const id = getId(event.target)
+            const id = event.target.getAttribute('href').replace('#', '');
+            console.log(document.getElementById(id).offsetTop);
+            console.log(event);
+            // Скролимся к блоку 
+            window.scrollTo({
+                top: document.getElementById(id).offsetTop - 30,
+                behavior: 'smooth',
 
-    //         })
-    //     }
-    // })
+            })
+        }
+    })
+
+    let phoneInputs = document.querySelectorAll('input[data-tel-input]');
+    let nameInputs = document.querySelector('input[data-name-input]');
+    let btnOrder = document.querySelector('.order_btn ');
+
+    //Просто добавь input > [data-tel-input] и type='tel' и подключи этот скрипт и все !!!
+    var getInputNumbersValue = function (input) {
+        // Return stripped input value — just numbers
+        return input.value.replace(/\D/g, '');
+    }
+
+    var onPhonePaste = function (e) {
+        var input = e.target,
+            inputNumbersValue = getInputNumbersValue(input);
+        var pasted = e.clipboardData || window.clipboardData;
+        examination();
+        if (pasted) {
+            var pastedText = pasted.getData('Text');
+            if (/\D/g.test(pastedText)) {
+                // Attempt to paste non-numeric symbol — remove all non-numeric symbols,
+                // formatting will be in onPhoneInput handler
+                input.value = inputNumbersValue;
+                return;
+            }
+        }
+    }
+
+    var onPhoneInput = function (e) {
+        var input = e.target,
+            inputNumbersValue = getInputNumbersValue(input),
+            selectionStart = input.selectionStart,
+            formattedInputValue = "";
+
+        if (!inputNumbersValue) {
+            return input.value = "";
+        }
+        examination();
+
+        if (input.value.length != selectionStart) {
+            // Editing in the middle of input, not last symbol
+            if (e.data && /\D/g.test(e.data)) {
+                // Attempt to input non-numeric symbol
+                input.value = inputNumbersValue;
+            }
+            return;
+        }
+
+        if (["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
+            if (inputNumbersValue[0] == "9") inputNumbersValue = "7" + inputNumbersValue;
+            var firstSymbols = (inputNumbersValue[0] == "8") ? "8" : "+7";
+            formattedInputValue = input.value = firstSymbols + " ";
+            if (inputNumbersValue.length > 1) {
+                formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
+            }
+            if (inputNumbersValue.length >= 5) {
+                formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
+            }
+            if (inputNumbersValue.length >= 8) {
+                formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
+            }
+            if (inputNumbersValue.length >= 10) {
+                formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
+            }
+        } else {
+            formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
+        }
+        input.value = formattedInputValue;
+    }
+    let examination = () => {
+        if(nameInputs.value.length >= 4 && phoneInput.value.length >= 17){
+            console.log('Прошло');
+            btnOrder.classList.remove('disable');
+            btnOrder.disabled = false;
+        }else{
+            btnOrder.classList.add('disable');
+            btnOrder.disabled = true;
+        }
+    }
+    var onPhoneKeyDown = function (e) {
+        // Clear input after remove last symbol
+        examination();
+        var inputValue = e.target.value.replace(/\D/g, '');
+        console.log();
+        if (e.keyCode == 8 && inputValue.length == 1) {
+            e.target.value = "";
+        }
+    }
+    for (var phoneInput of phoneInputs) {
+        phoneInput.addEventListener('keydown', onPhoneKeyDown);
+        phoneInput.addEventListener('input', onPhoneInput, false);
+        phoneInput.addEventListener('paste', onPhonePaste, false);
+        nameInputs.addEventListener('keydown', examination);
+        nameInputs.addEventListener('input', examination, false);
+        nameInputs.addEventListener('paste', examination, false);
+    }
+    // console.log(phoneInputs);
+    
 
 })
 
