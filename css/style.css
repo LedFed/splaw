@@ -242,7 +242,6 @@ legend {
 
 .slick-prev {
   left: 40%;
-  transform: translateX(-40%);
 }
 [dir=rtl] .slick-prev {
   left: auto;
@@ -257,7 +256,6 @@ legend {
 
 .slick-next {
   right: 40%;
-  transform: translateX(-40%);
 }
 [dir=rtl] .slick-next {
   left: -25px;
@@ -1530,7 +1528,7 @@ footer .header_links {
     text-overflow: ellipsis;
     margin: 0;
     position: absolute;
-    left: 32px;
+    left: 24px;
     font-size: 16px;
   }
   .mode:nth-child(odd) p {
@@ -1613,6 +1611,10 @@ footer .header_links {
     padding-top: 40px;
     padding-bottom: 70px;
   }
+  .blur {
+    width: 344px;
+    height: 387px;
+  }
   .wait_block {
     padding-top: 16px;
   }
@@ -1630,6 +1632,12 @@ footer .header_links {
   .programm_box {
     height: 440px;
   }
+  .programm_more {
+    transform: translateY(80%);
+  }
+  .programm_more:hover {
+    transform: translateY(0%);
+  }
   .more_title {
     font-size: 22px;
   }
@@ -1637,18 +1645,23 @@ footer .header_links {
     font-size: 16px;
     line-height: 30px;
   }
+  .slick-prev, .slick-next {
+    bottom: -30px;
+    height: 66px;
+    width: 60px;
+  }
   .slick-prev {
-    left: 32%;
+    left: 28%;
   }
   .slick-next {
-    right: 32%;
+    right: 28%;
   }
   .advantage {
     padding-top: 40px;
     padding-bottom: 40px;
   }
   .advantage_item {
-    row-gap: 28px;
+    row-gap: 32px;
     padding-top: 40px;
   }
   .advantage_block {
@@ -1660,7 +1673,7 @@ footer .header_links {
   }
   .advantage_text {
     margin-top: 12px;
-    line-height: 30px;
+    line-height: 34px;
   }
   .delivery {
     padding: 0;
