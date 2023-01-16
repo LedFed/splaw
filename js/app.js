@@ -51,56 +51,73 @@ document.addEventListener("DOMContentLoaded", () => {
             appendArrows: '.arrows_block',
             dotsClass: 'progress',
         });
+        // $("[date-slide]").slick({
+        //     isFinite: false,
+        //     fade: false,
+        //     infinite: false,
+        //     slideToShow: 3,
+        //     // centerMode:true,
+        //     slideToScroll: 1,
+        //     arrows: false,
+        //     dots: false,
+        //     autoplay: false,
+        //     useTransform:false,
+        //     // appendDots: '.route',
+        //     // appendArrows: '.arrows_block',
+        //     // dotsClass: 'progress',
+        // });
     });
 
     // const track = document.getElementById(".price_item");
-    let track = document.querySelector('.price_item');
 
-    const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+    // let track = document.querySelector('.price_item');
 
-    const handleOnUp = () => {
-        track.dataset.mouseDownAt = "0";
-        track.dataset.prevPercentage = track.dataset.percentage;
-    }
+    // const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
 
-    const handleOnMove = e => {
-        if (track.dataset.mouseDownAt === "0") return;
+    // const handleOnUp = () => {
+    //     track.dataset.mouseDownAt = "0";
+    //     track.dataset.prevPercentage = track.dataset.percentage;
+    // }
 
-        const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-            maxDelta = window.innerWidth;
+    // const handleOnMove = e => {
+    //     if (track.dataset.mouseDownAt === "0") return;
 
-        const percentage = (mouseDelta / maxDelta) * -100,
-            nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-            nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+    //     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+    //         maxDelta = window.innerWidth;
 
-        track.dataset.percentage = nextPercentage;
+    //     const percentage = (mouseDelta / maxDelta) * -100,
+    //         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+    //         nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 
-        track.animate({
-            transform: `translate(${nextPercentage}%, 0%)`
-        }, { duration: 1200, fill: "forwards" });
+    //     track.dataset.percentage = nextPercentage;
 
-        for (const image of track.getElementsByClassName("price_items")) {
-            image.animate({
-                backgroundPosition: `${100 + nextPercentage}% center`
-            }, { duration: 1200, fill: "forwards" });
-        }
-    }
+    //     track.animate({
+    //         transform: `translate(${nextPercentage}%, 0%)`
+    //     }, { duration: 1200, fill: "forwards" });
 
-    /* -- Had to add extra lines for touch events -- */
+    //     for (const image of track.getElementsByClassName("price_items")) {
+    //         image.animate({
+    //             backgroundPosition: `${100 + nextPercentage}% center`
+    //         }, { duration: 1200, fill: "forwards" });
+    //     }
+    // }
 
-    track.onmousedown = e => handleOnDown(e);
+    // /* -- Had to add extra lines for touch events -- */
 
-    track.ontouchstart = e => handleOnDown(e.touches[0]);
+    // track.onmousedown = e => handleOnDown(e);
 
-    track.onmouseup = e => handleOnUp(e);
+    // track.ontouchstart = e => handleOnDown(e.touches[0]);
 
-    track.ontouchend = e => handleOnUp(e.touches[0]);
+    // track.onmouseup = e => handleOnUp(e);
 
-    track.onmousemove = e => handleOnMove(e);
+    // track.ontouchend = e => handleOnUp(e.touches[0]);
 
-    track.ontouchmove = e => handleOnMove(e.touches[0]);
+    // track.onmousemove = e => handleOnMove(e);
+
+    // track.ontouchmove = e => handleOnMove(e.touches[0]);
 
     //Принимает два параметра функцию и опцию '0,7'
+    // Активный бар 
     const observer = new IntersectionObserver((entry) => {
         entry.forEach((entryes) => {
             // Если элемент пересекает
@@ -140,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
+    // --МАСКА для обратной связи name tel 
     let phoneInputs = document.querySelectorAll('input[data-tel-input]');
     let nameInputs = document.querySelector('input[data-name-input]');
     let btnOrder = document.querySelector('.order_btn ');
@@ -234,10 +252,21 @@ document.addEventListener("DOMContentLoaded", () => {
         nameInputs.addEventListener('input', examination, false);
         nameInputs.addEventListener('paste', examination, false);
     }
-    // console.log(phoneInputs);
-    
-
+    // --ПЛАВНОЕ появление элементов 
+    function onEntry(entry) {
+        entry.forEach(change => {        
+          if (change.isIntersecting) {
+            change.target.classList.add('show');
+          }
+        });
+      }
+      let options = { threshold: [0.5] };
+      let observers = new IntersectionObserver(onEntry, options);
+      let elements = document.querySelectorAll('.animate');
+      for (let elm of elements) {
+        observers.observe(elm);
+      }
 })
 
-// let burger = document.querySelector('.menu [type="checkbox"]')
+
 
