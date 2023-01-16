@@ -8,6 +8,7 @@
     <title>beauty of the Urals</title>
     <!--Подключаем стили и шрифт -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="fonts/Overpass-Italic-VariableFont_wght.ttf">
     <link rel="stylesheet" href="fonts/Overpass-VariableFont_wght.ttf">
     <!-- <link rel="stylesheet" href="fonts/RussoOne-Regular.ttf"> -->
@@ -68,7 +69,7 @@
                     </ul>
                     <a href="tel:+7 (919) 348-78-17" class="number_links">+7 (919) 348-78-17</a>
                 </header>
-                <div class="inner_block">
+                <div class="inner_block animate">
                     <h1 class="title_main">Туристические Сплав по реке Ай</h1>
                     <p class="text_main">Протяженность маршрута - 40 км. Маршрут сплава проходит по самому живописному
                         участку реки Ай.</p>
@@ -121,7 +122,7 @@
 
         <div class="content ">
             <!-- Wait  -->
-            <div class="wait section" id="wait">
+            <div class="wait section animate" id="wait">
                 <div class="container">
                     <h2 class="title">Маршрут</h2>
                     <div class="wait_block">
@@ -150,7 +151,7 @@
                 <div class="container">
                     <div class="programm_container">
                         <div class="arrows_block">
-                            <div class="programm_info" data-slider>
+                            <div class="programm_info animate" data-slider>
                                 <div class="programm_box">
                                     <div class="programm_more">
                                         <div class="more_title">Подробнее</div>
@@ -273,21 +274,21 @@
                     <h2 class="title">Наши преимущество</h2>
                     <div class="advantage_item">
                         <div class="advantage_items">
-                            <div class="advantage_block">
+                            <div class="advantage_block animate">
                                 <img src="img/raft.svg" alt="raft">
                                 <h4 class="advantage_title">Рафты</h4>
                             </div>
                             <p class="advantage_text">Рафтинг Индивидуальный или Груповой сплав по реке Ай</p>
                         </div>
                         <div class="advantage_items">
-                            <div class="advantage_block">
+                            <div class="advantage_block animate">
                                 <img src="img/bath.svg" alt="bath">
                                 <h4 class="advantage_title">Баня</h4>
                             </div>
                             <p class="advantage_text">Баня на природе под открытым небом, что может быть лучше</p>
                         </div>
                         <div class="advantage_items">
-                            <div class="advantage_block">
+                            <div class="advantage_block animate">
                                 <img src="img/guid.svg" alt="guid">
                                 <h4 class="advantage_title">Гиды</h4>
                             </div>
@@ -302,7 +303,7 @@
             <div class="price section" id="price">
                 <div class="container">
                     <h2 class="title">Тарифы</h2>
-                    <div class="price_item" data-mouse-down-at="0" data-prev-percentage="0" >
+                    <div class="price_item" date-slide>
                         <div class="price_item_card">
                             <div class="price_items">
                                 <h5 class="price_title">Однодневный сплав</h5>
@@ -365,7 +366,7 @@
                         <input type="text" name="name" class="order_value" placeholder="Имя" data-name-input>
                         <input type="text" name="phone" class="order_value" inputmode="tel" type="tel" data-tel-input
                             placeholder="+7 (977)  **-**-**" maxlength="18">
-                        <button class="order_btn disable" disable="disable" type="submit">Забронировать</button>
+                        <button class="order_btn disable" disabled type="submit">Забронировать</button>
                         <p class="order_text">*Наш менджер свяжиться с вами в течение дня </p>
                     </form>
 
@@ -435,7 +436,11 @@
     <script src="https://code.jquery.com/jquery-3.6.3.js"
     integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="js/slick.js" defer></script>
+   
     <script src="js/app.js"></script>
+    <!-- <script src="js/wow.min.js"></script> -->
+    <!-- <script src="js/wow.js"></script> -->
+
 </body>
 
 </html>
