@@ -241,11 +241,10 @@ legend {
 }
 
 .slick-prev {
-  left: 40%;
+  left: 0;
 }
 [dir=rtl] .slick-prev {
   left: auto;
-  right: -25px;
 }
 .slick-prev:before {
   content: "←";
@@ -255,10 +254,9 @@ legend {
 }
 
 .slick-next {
-  right: 40%;
+  right: 0;
 }
 [dir=rtl] .slick-next {
-  left: -25px;
   right: auto;
 }
 .slick-next:before {
@@ -625,7 +623,7 @@ body {
   }
 }
 .logo {
-  z-index: 1;
+  z-index: 2;
 }
 
 .parallax {
@@ -1300,10 +1298,6 @@ footer .header_links {
   .progress {
     row-gap: 32px;
   }
-  .slick-prev,
-.slick-next {
-    bottom: 0px;
-  }
   .advantage_text {
     text-align: left;
   }
@@ -1352,10 +1346,6 @@ footer .header_links {
   }
   .mode:first-child p {
     left: -11px;
-  }
-  .slick-prev,
-.slick-next {
-    bottom: 30px;
   }
   .mode:nth-child(even) p {
     margin: 0;
@@ -1420,6 +1410,13 @@ footer .header_links {
     max-width: 400px;
     text-align: center;
   }
+  .arrows_block {
+    position: absolute;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 150px;
+    left: calc(50% - 16px);
+  }
   .price {
     padding-bottom: 90px;
   }
@@ -1459,7 +1456,7 @@ footer .header_links {
     display: block;
   }
   .menu--3.active {
-    z-index: 1;
+    z-index: 2;
   }
   .hed2 .header_item {
     display: none;
@@ -1494,6 +1491,7 @@ footer .header_links {
     align-items: center;
     transform: translateX(-100%);
     transition: 0.3s linear;
+    z-index: 1;
   }
   .parallax .header_item.active {
     transform: translateX(0%);
@@ -1566,10 +1564,6 @@ footer .header_links {
   }
   .slick-dotted.slick-slider {
     margin-bottom: 70px;
-  }
-  .slick-prev,
-.slick-next {
-    bottom: 32px;
   }
   .advantage {
     padding-top: 50px;
@@ -1680,16 +1674,15 @@ footer .header_links {
     font-size: 16px;
     line-height: 30px;
   }
-  .slick-prev, .slick-next {
+  .slick-prev,
+.slick-next {
     bottom: -30px;
     height: 66px;
     width: 60px;
   }
-  .slick-prev {
-    left: 28%;
-  }
-  .slick-next {
-    right: 28%;
+  .arrows_block {
+    bottom: 0;
+    left: 50%;
   }
   .advantage {
     padding-top: 40px;
