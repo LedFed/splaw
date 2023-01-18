@@ -626,6 +626,82 @@ body {
   z-index: 2;
 }
 
+.preloader_con {
+  height: 100vh;
+  transition: 0.4s linear;
+}
+.preloader_con.preloader-remove {
+  height: 0vh;
+}
+
+.preloader {
+  display: block;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 30px auto;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #337AB7;
+  -webkit-animation: preloader-5-spin 2s linear infinite;
+          animation: preloader-5-spin 2s linear infinite;
+  top: 27%;
+  transition: 0.4s linear;
+}
+.preloader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #BFE2FF;
+  -webkit-animation: preloader-5-spin 3s linear infinite;
+          animation: preloader-5-spin 3s linear infinite;
+}
+.preloader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #337AB7;
+  -webkit-animation: preloader-5-spin 1.5s linear infinite;
+          animation: preloader-5-spin 1.5s linear infinite;
+}
+.preloader.preloader-remove {
+  top: 0;
+  opacity: 0;
+  z-index: -10;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border: 0px;
+  overflow: hidden;
+}
+
+@-webkit-keyframes preloader-5-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-5-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .parallax {
   min-height: 100vh;
   position: relative;
@@ -957,6 +1033,10 @@ header {
 
 .arrows_block {
   position: relative;
+  width: 150px;
+  transform: translateX(-50%);
+  bottom: -35px;
+  left: calc(50% - 16px);
 }
 
 .programm_container {
