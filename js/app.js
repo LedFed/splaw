@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 navigation.classList.remove('active');
                 burger.classList.remove('active');
                 checker.checked = false;
-            })    
+            })
         });
     })
 
@@ -49,23 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
             autoplay: false,
             appendDots: '.route',
             appendArrows: '.arrows_block',
+            arrowsClass: 'progress',
             dotsClass: 'progress',
         });
-        // $("[date-slide]").slick({
-        //     isFinite: false,
-        //     fade: false,
-        //     infinite: false,
-        //     slideToShow: 3,
-        //     // centerMode:true,
-        //     slideToScroll: 1,
-        //     arrows: false,
-        //     dots: false,
-        //     autoplay: false,
-        //     useTransform:false,
-        //     // appendDots: '.route',
-        //     // appendArrows: '.arrows_block',
-        //     // dotsClass: 'progress',
-        // });
     });
 
     // const track = document.getElementById(".price_item");
@@ -117,6 +103,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // track.ontouchmove = e => handleOnMove(e.touches[0]);
 
     //Принимает два параметра функцию и опцию '0,7'
+    window.onload = function () {
+        document.querySelector('.preloader').classList.add("preloader-remove");
+        document.querySelector('.preloader_con').classList.add("preloader-remove");
+    };
     // Активный бар 
     const observer = new IntersectionObserver((entry) => {
         entry.forEach((entryes) => {
@@ -226,11 +216,11 @@ document.addEventListener("DOMContentLoaded", () => {
         input.value = formattedInputValue;
     }
     let examination = () => {
-        if(nameInputs.value.length >= 4 && phoneInput.value.length >= 17){
+        if (nameInputs.value.length >= 4 && phoneInput.value.length >= 17) {
             console.log('Прошло');
             btnOrder.classList.remove('disable');
             btnOrder.disabled = false;
-        }else{
+        } else {
             btnOrder.classList.add('disable');
             btnOrder.disabled = true;
         }
@@ -254,18 +244,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // --ПЛАВНОЕ появление элементов 
     function onEntry(entry) {
-        entry.forEach(change => {        
-          if (change.isIntersecting) {
-            change.target.classList.add('show');
-          }
+        entry.forEach(change => {
+            if (change.isIntersecting) {
+                change.target.classList.add('show');
+            }
         });
-      }
-      let options = { threshold: [0.5] };
-      let observers = new IntersectionObserver(onEntry, options);
-      let elements = document.querySelectorAll('.animate');
-      for (let elm of elements) {
+    }
+    let options = { threshold: [0.5] };
+    let observers = new IntersectionObserver(onEntry, options);
+    let elements = document.querySelectorAll('.animate');
+    for (let elm of elements) {
         observers.observe(elm);
-      }
+    }
 })
 
 
