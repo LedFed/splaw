@@ -1560,7 +1560,6 @@ footer .header_links {
   }
   .hed2 .logo {
     display: none;
-    padding-top: 24px;
   }
   .hed2.active .number_links {
     display: block;
@@ -1718,8 +1717,11 @@ footer .header_links {
     padding: 0 12px;
     max-width: 100%;
   }
+  .menu--3 {
+    left: 10px;
+  }
   .parallax header {
-    padding: 0;
+    padding: 24px 0;
   }
   .parallax .inner_block {
     margin-top: 50px;
