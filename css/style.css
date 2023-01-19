@@ -611,6 +611,7 @@ body {
 @media (pointer: fine) {
   .all::-webkit-scrollbar {
     width: 15px;
+    z-index: 1;
   }
   .all::-webkit-scrollbar-track {
     background: #1d1f1c;
@@ -766,8 +767,8 @@ body {
 .burger {
   display: block;
   cursor: pointer;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 .burger input {
   display: none;
@@ -851,15 +852,22 @@ header {
   display: none;
   scroll-behavior: smooth;
 }
-.hed2.fixed {
-  display: block;
-  position: fixed;
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
-  z-index: 1;
-  left: 0;
-  top: -2px;
-  width: calc(100% - 17px);
+@media (min-width: 770px) {
+  .hed2.fixed {
+    display: block;
+    position: fixed;
+    -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+    z-index: 1;
+    left: 0;
+    top: -2px;
+    width: 100%;
+  }
+}
+@media (pointer: fine) {
+  .hed2.fixed {
+    width: calc(100% - 15px);
+  }
 }
 .hed2 .container {
   display: flex;
@@ -950,7 +958,7 @@ header {
 
 .animate {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
 }
 .animate.show {
   opacity: 1;
@@ -1534,12 +1542,33 @@ footer .header_links {
 @media (max-width: 770px) {
   .menu--3 {
     display: block;
+    position: absolute;
+    left: 16px;
+    z-index: 2;
+    top: 12px;
+    transform: scale(1.2);
+    border-radius: 50%;
+    -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
   }
   .menu--3.active {
     z-index: 2;
   }
-  .hed2 .header_item {
+  .hed2 {
+    display: block;
+    padding: 0;
+  }
+  .hed2 .logo {
     display: none;
+  }
+  .hed2.active .number_links {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    /* bottom: 0; */
+    top: 570px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .hed2.fixed .logo {
     margin: 0 auto;
@@ -1552,12 +1581,8 @@ footer .header_links {
   .inner_social {
     margin-right: 0;
   }
-  .parallax header {
-    padding: 24px 0;
-  }
-  .parallax .header_item {
+  .header_item {
     display: grid;
-    flex-direction: column;
     width: 100%;
     position: absolute;
     inset: 0;
@@ -1573,10 +1598,10 @@ footer .header_links {
     transition: 0.3s linear;
     z-index: 1;
   }
-  .parallax .header_item.active {
+  .header_item.active {
     transform: translateX(0%);
   }
-  .parallax .header_item.active .header_links {
+  .header_item.active .header_links {
     font-size: 22px;
     display: inline-grid;
     justify-items: center;
@@ -1584,12 +1609,16 @@ footer .header_links {
     width: 100%;
     height: 100%;
   }
-  .parallax .header_items {
+  .header_item .header_items {
     height: 100%;
     width: 100%;
   }
-  .parallax .inner_block {
+  .inner_block {
     margin-top: 70px;
+  }
+  .parallax header {
+    padding: 24px 0;
+    justify-content: end;
   }
   .wait {
     padding-top: 50px;
