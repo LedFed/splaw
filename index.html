@@ -1,458 +1,1846 @@
-<!DOCTYPE html>
-<html lang="en">
+@charset "UTF-8";
+/* Reset and base styles  */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;700&family=Russo+One&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>beauty of the Urals</title>
-    <!--Подключаем стили и шрифт -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/animate.css"> -->
-    <link rel="stylesheet" href="fonts/Overpass-Italic-VariableFont_wght.ttf">
-    <link rel="stylesheet" href="fonts/Overpass-VariableFont_wght.ttf">
-</head>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-<body>
-    <div class="preloader_con">
-        <div class="preloader"></div>
-    </div>
+:focus,
+:active {
+  /*outline: none;*/
+}
 
-    <div class="menu back menu--3">
-        <label class="burger">
-            <input type="checkbox">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="30" />
-                <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55" />
-                <path class="line--2" d="M0 50h80" />
-                <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45" />
-            </svg>
-        </label>
-    </div>
+a:focus,
+a:active {
+  /* outline: none;*/
+}
 
-    <div class="container">
-        <header class="hed2">
-            <div class="container">
-                
-                <div class="logo">Logo</div>
-                <ul class="header_item">
-                    <li class="header_items"><a href="#advantage" class="header_links smart_link">Преимущество</a></li>
-                    <li class="header_items"><a href="#price" class="header_links smart_link">Тарифы</a></li>
-                    <li class="header_items"><a href="#wait" class="header_links smart_link">Маршрут</a></li>
-                    <li class="header_items"><a href="#delivery" class="header_links smart_link">Забронировать</a></li>
-                </ul>
-                <a href="tel:+79193487817" class="number_links">+7 (919) 348-78-17</a>
-            </div>
+/* Links */
+a, a:link, a:visited {
+  /* color: inherit; */
+  text-decoration: none;
+  /* display: inline-block; */
+}
 
-        </header>
-    </div>
+a:hover {
+  /* color: inherit; */
+  text-decoration: none;
+}
 
+/* Common */
+aside, nav, footer, header, section, main {
+  display: block;
+}
 
-    <div class="all">
-        <!-- Main  -->
-        <div class="parallax">
-            <div class="container">
-                <header>
-                    <!-- <div class="menu back menu--3">
-                        <label class="burger">
-                            <input type="checkbox">
-                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="30" />
-                                <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55" />
-                                <path class="line--2" d="M0 50h80" />
-                                <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45" />
-                            </svg>
-                        </label>
-                    </div> -->
-                    <div class="logo">Logo</div>
-                    <ul class="header_item header_list">
-                        <li class="header_items"><a href="#advantage" class="header_links">Преимущество</a></li>
-                        <li class="header_items"><a href="#price" class="header_links">Тарифы</a></li>
-                        <li class="header_items"><a href="#wait" class="header_links">Маршрут</a></li>
-                        <li class="header_items"><a href="#delivery" class="header_links">Забронировать</a></li>
-                    </ul>
-                    <a href="tel:+79193487817" class="number_links">+7 (919) 348-78-17</a>
-                </header>
-                <div class="inner_block animate">
-                    <h1 class="title_main">Туристические Сплав по реке Ай</h1>
-                    <p class="text_main">Протяженность маршрута - 40 км. Маршрут сплава проходит по самому живописному
-                        участку реки Ай.</p>
-                    <div class="inner_position_el">
-                        <a href="#delivery" class="btn_order">Забронировать</a>
-                        <div class="inner_social">
-                            <a href="#" class="inner_links">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M25.8871 4.56812C25.8871 4.56812 28.3154 3.62124 28.113 5.9208C28.0456 6.86769 27.4385 10.1817 26.9663 13.7664L25.3474 24.3849C25.3474 24.3849 25.2126 25.9405 23.9984 26.2111C22.7842 26.4816 20.963 25.2642 20.6257 24.9936C20.3559 24.7908 15.5667 21.7472 13.8804 20.2592C13.4082 19.8534 12.8686 19.0418 13.9478 18.0949L21.0304 11.3316C21.8399 10.5199 22.6493 8.62619 19.2766 10.9257L9.83319 17.351C9.83319 17.351 8.75394 18.0273 6.73038 17.4186L2.34589 16.0659C2.34589 16.0659 0.727007 15.0514 3.49259 14.0369C10.2379 10.8581 18.5347 7.61162 25.8871 4.56812Z"
-                                        fill="auto" />
-                                </svg>
-                            </a>
-                            <a href="#" class="inner_links">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_72_135)">
-                                        <path
-                                            d="M26.703 18.4468C26.703 18.4468 29.1285 20.8423 29.7285 21.9508C29.7402 21.9668 29.7493 21.9845 29.7555 22.0033C30 22.4128 30.06 22.7338 29.94 22.9708C29.7375 23.3623 29.052 23.5588 28.8195 23.5753H24.5325C24.234 23.5753 23.613 23.4973 22.857 22.9753C22.2795 22.5718 21.705 21.9073 21.1485 21.2578C20.3175 20.2933 19.599 19.4563 18.8715 19.4563C18.7796 19.4561 18.6884 19.4713 18.6015 19.5013C18.051 19.6753 17.352 20.4598 17.352 22.5493C17.352 23.2033 16.836 23.5753 16.4745 23.5753H14.511C13.842 23.5753 10.359 23.3413 7.27051 20.0848C3.48601 16.0978 0.087013 8.09982 0.054013 8.02932C-0.157487 7.51182 0.286513 7.22982 0.766513 7.22982H5.09551C5.67601 7.22982 5.86501 7.58082 5.99701 7.89582C6.15001 8.25732 6.71701 9.70332 7.64701 11.3278C9.15301 13.9708 10.0785 15.0463 10.818 15.0463C10.9569 15.0467 11.0935 15.0105 11.214 14.9413C12.18 14.4103 12 10.9603 11.955 10.2493C11.955 10.1113 11.9535 8.70882 11.4585 8.03082C11.1045 7.54482 10.5015 7.35582 10.137 7.28682C10.2345 7.14582 10.4415 6.92982 10.707 6.80232C11.3685 6.47232 12.564 6.42432 13.7505 6.42432H14.409C15.696 6.44232 16.029 6.52482 16.497 6.64332C17.439 6.86832 17.457 7.47882 17.3745 9.55782C17.3505 10.1518 17.325 10.8208 17.325 11.6083C17.325 11.7763 17.3175 11.9638 17.3175 12.1543C17.289 13.2208 17.2515 14.4223 18.0045 14.9158C18.1022 14.9767 18.2149 15.0089 18.33 15.0088C18.591 15.0088 19.3725 15.0088 21.492 11.3713C22.422 9.76482 23.142 7.87032 23.1915 7.72782C23.2335 7.64832 23.3595 7.42482 23.5125 7.33482C23.6214 7.27691 23.7433 7.24798 23.8665 7.25082H28.959C29.514 7.25082 29.8905 7.33482 29.964 7.54482C30.087 7.88532 29.94 8.92482 27.615 12.0688C27.2235 12.5923 26.88 13.0453 26.5785 13.4413C24.471 16.2073 24.471 16.3468 26.703 18.4468Z"
-                                            fill="auto" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_72_135">
-                                            <rect width="30" height="30" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </a>
-                            <a href="#" class="inner_links">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_72_138)">
-                                        <path
-                                            d="M15 0C10.9229 0 10.4147 0.0196875 8.81914 0.0871875C7.21695 0.165937 6.1332 0.414375 5.17695 0.785625C4.1907 1.17188 3.3507 1.68469 2.52102 2.51906C1.6857 3.34875 1.1682 4.18875 0.787578 5.175C0.416328 6.13125 0.167891 7.215 0.0891407 8.81719C0.0169532 10.4137 0.00195312 10.9209 0.00195312 14.9981C0.00195312 19.0753 0.0216407 19.5834 0.0891407 21.1791C0.167891 22.7766 0.416328 23.865 0.787578 24.8212C1.17383 25.8075 1.68664 26.6475 2.52102 27.4772C3.3507 28.3125 4.1907 28.83 5.17695 29.2106C6.1332 29.5772 7.22164 29.8303 8.81914 29.9091C10.4157 29.9813 10.9229 29.9963 15 29.9963C19.0772 29.9963 19.5854 29.9766 21.181 29.9091C22.7785 29.8303 23.8669 29.5763 24.8232 29.2106C25.8094 28.8244 26.6494 28.3116 27.4791 27.4772C28.3144 26.6475 28.8319 25.8122 29.2125 24.8212C29.5791 23.865 29.8322 22.7766 29.911 21.1791C29.9832 19.5825 29.9982 19.0753 29.9982 14.9981C29.9982 10.9209 29.9785 10.4128 29.911 8.81719C29.8322 7.21969 29.5782 6.12563 29.2125 5.175C28.8263 4.18875 28.3135 3.34875 27.4791 2.51906C26.6494 1.68375 25.8141 1.16625 24.8232 0.785625C23.8669 0.414375 22.7785 0.165937 21.181 0.0871875C19.5844 0.015 19.0772 0 15 0ZM15 2.7C19.0041 2.7 19.4822 2.71969 21.0647 2.78719C22.5244 2.85563 23.3194 3.09938 23.8472 3.30562C24.5513 3.57844 25.0435 3.90094 25.576 4.42781C26.0982 4.95 26.4207 5.44781 26.6935 6.15188C26.8997 6.67969 27.1435 7.47469 27.2119 8.93437C27.2794 10.5169 27.2991 10.9959 27.2991 14.9991C27.2991 19.0022 27.2794 19.4813 27.2063 21.0638C27.1275 22.5234 26.8838 23.3184 26.6785 23.8463C26.3944 24.5503 26.0775 25.0425 25.5544 25.575C25.0266 26.0972 24.5241 26.4197 23.8257 26.6925C23.3044 26.8988 22.4982 27.1425 21.0329 27.2109C19.4419 27.2784 18.9732 27.2981 14.9588 27.2981C10.9444 27.2981 10.4766 27.2784 8.88383 27.2053C7.42414 27.1266 6.61883 26.8828 6.09102 26.6775C5.37852 26.3934 4.89008 26.0766 4.36695 25.5534C3.83914 25.0256 3.50352 24.5231 3.24477 23.8247C3.03477 23.3034 2.79477 22.4972 2.71695 21.0319C2.66352 19.4597 2.6382 18.9722 2.6382 14.9766C2.6382 10.9828 2.66352 10.4944 2.71695 8.9025C2.79477 7.43719 3.03477 6.63281 3.24477 6.10969C3.50352 5.39625 3.84008 4.90875 4.36695 4.38094C4.88914 3.85875 5.37852 3.52125 6.09102 3.25688C6.61883 3.05156 7.40445 2.80781 8.86977 2.73469C10.4607 2.6775 10.9294 2.65688 14.9382 2.65688L15 2.7ZM15 7.30031C10.7429 7.30031 7.30039 10.7475 7.30039 15C7.30039 19.2572 10.7475 22.6997 15 22.6997C19.2572 22.6997 22.6997 19.2525 22.6997 15C22.6997 10.7428 19.2525 7.30031 15 7.30031ZM15 19.9997C12.2363 19.9997 10.0004 17.7638 10.0004 15C10.0004 12.2362 12.2363 10.0003 15 10.0003C17.7638 10.0003 19.9997 12.2362 19.9997 15C19.9997 17.7638 17.7638 19.9997 15 19.9997ZM24.81 6.99281C24.81 7.98938 23.9991 8.79375 23.0072 8.79375C22.0107 8.79375 21.2063 7.98844 21.2063 6.99281C21.2063 6.00187 22.0163 5.19562 23.0072 5.19562C23.9982 5.19562 24.81 6.00187 24.81 6.99281Z"
-                                            fill="auto" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_72_138">
-                                            <rect width="30" height="30" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit;
+}
 
-        <div class="content ">
-            <!-- Wait  -->
-            <div class="wait section animate" id="wait">
-                <div class="container">
-                    <h2 class="title">Маршрут</h2>
-                    <div class="wait_block">
-                        <div class="wait_type">
-                            <h3 class="title left">Вас ждет</h3>
-                            <p class="wait_text">Маршрут сплава проходит по самому живописному участку <span>реки
-                                    Ай.</span> Во время
-                                сплава
-                                Вы побываете в пещере Кургазак, увидите "Сухие водопады", Большие Айские притесы,
-                                посетите
-                                Сикияз-Тамакский пещерный комплекс, искупаетесь в природном фонтане.
-                                Для участия в сплаве не требуется специальная подготовка, наши инструктора помогут Вам
-                                освоить
-                                необходимые навыки управления рафтами.
-                            </p>
-                        </div>
+ul, ul li {
+  list-style: none;
+}
 
-                        <div class="wait_img"><img src="img/ia.jpg" alt="#"></div>
-                    </div>
-                </div>
-                <div class="blur"></div>
-            </div>
+img {
+  vertical-align: top;
+}
 
-            <!-- Programm  -->
-            <div class="programm">
-                <!-- <div class="water"> -->
-                <div class="container">
-                    <div class="programm_container">
-                        <div class="cute">
-                            <div class="programm_info animate" data-slider>
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
 
-                                <div class="programm_box">
-                                    <div class="programm_more">
-                                        <div class="more_title">Подробнее</div>
-                                        <p class="more_text">Вас ждет захватывающее путешествие по невероятным и самым
-                                            волнующим
-                                            местам дикой природы нашего края. У каждого теперь есть удивительная
-                                            возможность
-                                            увидеть
-                                            красоту дикой природы и ее обитателей.
-                                            Бурное развитие экотуризма приводит к тому, что все больше людей стали
-                                            бережнее
-                                            относиться к окружающей природе, стараясь сохранить ее первозданную красоту.
-                                        </p>
-                                    </div>
-                                </div>
+/* Form */
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
 
-                                <div class="programm_box">
-                                    <div class="programm_more">
-                                        <div class="more_title">Подробнее</div>
-                                        <p class="more_text">Вас ждет захватывающее путешествие по невероятным и самым
-                                            волнующим
-                                            местам дикой природы нашего края. У каждого теперь есть удивительная
-                                            возможность
-                                            увидеть
-                                            красоту дикой природы и ее обитателей.
-                                            Бурное развитие экотуризма приводит к тому, что все больше людей стали
-                                            бережнее
-                                            относиться к окружающей природе, стараясь сохранить ее первозданную красоту.
-                                        </p>
-                                    </div>
-                                </div>
+input::-ms-clear {
+  display: none;
+}
 
-                                <div class="programm_box">
-                                    <div class="programm_more">
-                                        <div class="more_title">Подробнее</div>
-                                        <p class="more_text">Вас ждет захватывающее путешествие по невероятным и самым
-                                            волнующим
-                                            местам дикой природы нашего края. У каждого теперь есть удивительная
-                                            возможность
-                                            увидеть
-                                            красоту дикой природы и ее обитателей.
-                                            Бурное развитие экотуризма приводит к тому, что все больше людей стали
-                                            бережнее
-                                            относиться к окружающей природе, стараясь сохранить ее первозданную красоту.
-                                        </p>
-                                    </div>
-                                </div>
+button, input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
 
-                                <div class="programm_box">
-                                    <div class="programm_more">
-                                        <div class="more_title">Подробнее</div>
-                                        <p class="more_text">Вас ждет захватывающее путешествие по невероятным и самым
-                                            волнующим
-                                            местам дикой природы нашего края. У каждого теперь есть удивительная
-                                            возможность
-                                            увидеть
-                                            красоту дикой природы и ее обитателей.
-                                            Бурное развитие экотуризма приводит к тому, что все больше людей стали
-                                            бережнее
-                                            относиться к окружающей природе, стараясь сохранить ее первозданную красоту.
-                                        </p>
-                                    </div>
-                                </div>
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
 
-                                <div class="programm_box">
-                                    <div class="programm_more">
-                                        <div class="more_title">Подробнее</div>
-                                        <p class="more_text">Вас ждет захватывающее путешествие по невероятным и самым
-                                            волнующим
-                                            местам дикой природы нашего края. У каждого теперь есть удивительная
-                                            возможность
-                                            увидеть
-                                            красоту дикой природы и ее обитателей.
-                                            Бурное развитие экотуризма приводит к тому, что все больше людей стали
-                                            бережнее
-                                            относиться к окружающей природе, стараясь сохранить ее первозданную красоту.
-                                        </p>
-                                    </div>
-                                </div>
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
 
-                                <div class="programm_box">
-                                    <div class="programm_more">
-                                        <div class="more_title">Подробнее</div>
-                                        <p class="more_text">Вас ждет захватывающее путешествие по невероятным и самым
-                                            волнующим
-                                            местам дикой природы нашего края. У каждого теперь есть удивительная
-                                            возможность
-                                            увидеть
-                                            красоту дикой природы и ее обитателей.
-                                            Бурное развитие экотуризма приводит к тому, что все больше людей стали
-                                            бережнее
-                                            относиться к окружающей природе, стараясь сохранить ее первозданную красоту.
-                                        </p>
-                                    </div>
-                                </div>
+label {
+  cursor: pointer;
+}
 
-                                <div class="programm_box">
-                                    <div class="programm_more">
-                                        <div class="more_title">Подробнее</div>
-                                        <p class="more_text">Вас ждет захватывающее путешествие по невероятным и самым
-                                            волнующим
-                                            местам дикой природы нашего края. У каждого теперь есть удивительная
-                                            возможность
-                                            увидеть
-                                            красоту дикой природы и ее обитателей.
-                                            Бурное развитие экотуризма приводит к тому, что все больше людей стали
-                                            бережнее
-                                            относиться к окружающей природе, стараясь сохранить ее первозданную красоту.
-                                        </p>
-                                    </div>
-                                </div>
+legend {
+  display: block;
+}
 
-                                <div class="programm_box">
-                                    <div class="programm_more">
-                                        <div class="more_title">23232</div>
-                                        <p class="more_text">Вас ждет захватывающее путешествие по невероятным и самым
-                                            волнующим
-                                            местам дикой природы нашего края. У каждого теперь есть удивительная
-                                            возможность
-                                            увидеть
-                                            красоту дикой природы и ее обитателей.
-                                            Бурное развитие экотуризма приводит к тому, что все больше людей стали
-                                            бережнее
-                                            относиться к окружающей природе, стараясь сохранить ее первозданную красоту.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="arrows_block"></div>
-                        </div>
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
 
-                        <div class="route">
-                            <h3 class="title">В программе</h3>
-                        </div>
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
 
-                    </div>
-                </div>
-                <!-- </div> -->
-            </div>
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
 
-            <!-- Advantage -->
-            <div class="advantage section" id="advantage">
-                <div class="container">
-                    <h2 class="title">Наши преимущество</h2>
-                    <div class="advantage_item">
-                        <div class="advantage_items">
-                            <div class="advantage_block animate">
-                                <img src="img/raft.svg" alt="raft">
-                                <h4 class="advantage_title">Рафты</h4>
-                            </div>
-                            <p class="advantage_text">Рафтинг Индивидуальный или Груповой сплав по реке Ай</p>
-                        </div>
-                        <div class="advantage_items">
-                            <div class="advantage_block animate">
-                                <img src="img/bath.svg" alt="bath">
-                                <h4 class="advantage_title">Баня</h4>
-                            </div>
-                            <p class="advantage_text">Баня на природе под открытым небом, что может быть лучше</p>
-                        </div>
-                        <div class="advantage_items">
-                            <div class="advantage_block animate">
-                                <img src="img/guid.svg" alt="guid">
-                                <h4 class="advantage_title">Гиды</h4>
-                            </div>
-                            <p class="advantage_text">Наши гиды будут сопровождать вас от самого начала до самого конца
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
 
-            <!-- Price  -->
-            <div class="price section animate" id="price">
-                <div class="container">
-                    <h2 class="title">Тарифы</h2>
-                    <div class="price_item">
-                        <div class="price_item_card">
-                            <div class="price_items">
-                                <h5 class="price_title">Однодневный сплав</h5>
-                                <div class="price_subtite">Подробнее</div>
-                            </div>
-                            <p class="price_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-                                quae
-                                fuga ipsa vero voluptate voluptatum repellendus doloremque, perspiciatis ipsam
-                                praesentium?
-                            </p>
-                        </div>
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir=rtl] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
 
-                        <div class="price_item_card">
-                            <div class="price_items">
-                                <h5 class="price_title">Однодневный сплав</h5>
-                                <div class="price_subtite">Подробнее</div>
-                            </div>
-                            <p class="price_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-                                quae
-                                fuga ipsa vero voluptate voluptatum repellendus doloremque, perspiciatis ipsam
-                                praesentium?
-                            </p>
-                        </div>
+.slick-arrow.slick-hidden {
+  display: none;
+}
 
-                        <div class="price_item_card">
-                            <div class="price_items">
-                                <h5 class="price_title">Однодневный сплав</h5>
-                                <div class="price_subtite">Подробнее</div>
-                            </div>
-                            <p class="price_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-                                quae
-                                fuga ipsa vero voluptate voluptatum repellendus doloremque, perspiciatis ipsam
-                                praesentium?
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+/* Slider */
+.slick-loading .slick-list {
+  background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+}
 
-            <!-- Delivery  -->
-            <div class="delivery section" id="delivery">
-                <div class="container ">
-                    <form action="telegram.php" method="post" class="order ">
-                        <h3 class="services_title">Остались вопросы ?</h3>
-                        <input type="text" name="name" class="order_value" placeholder="Имя" data-name-input>
-                        <input type="tel" name="phone" class="order_value" inputmode="tel" data-tel-input
-                            placeholder="+7 (977)  **-**-**" maxlength="18">
-                        <button class="order_btn disable" disabled type="submit">Забронировать</button>
-                        <p class="order_text">*Наш менджер свяжиться с вами в течение дня </p>
-                    </form>
+/* Icons */
+@font-face {
+  font-family: "slick";
+  src: slick-font-url("slick.eot");
+  src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 40px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  bottom: 30px;
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.slick-prev:hover, .slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+.slick-prev:hover:before, .slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+.slick-prev:before,
+.slick-next:before {
+  font-family: "slick";
+  font-size: 60px;
+  line-height: 1;
+  color: white;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-                </div>
-            </div>
+.slick-prev {
+  left: 0;
+}
+[dir=rtl] .slick-prev {
+  left: auto;
+}
+.slick-prev:before {
+  content: "←";
+}
+[dir=rtl] .slick-prev:before {
+  content: "→";
+}
 
-            <!-- Footer  -->
-            <footer id="footer">
-                <div class="container">
-                    <div class="footer_position">
-                        <div class="logo">Logo</div>
-                        <ul class="header_item">
-                            <li class="header_items"><a href="#advantage" class="header_links">Преимущество</a></li>
-                            <li class="header_items"><a href="#price" class="header_links">Тарифы</a></li>
-                            <li class="header_items"><a href="#wait" class="header_links">Маршрут</a></li>
-                            <li class="header_items"><a href="#delivery" class="header_links">Забронировать</a></li>
-                        </ul>
-                        <div class="footer_links">
-                            <a href="tel:+79193487817" class="number_links">+7 (919) 348-78-17</a>
-                            <div class="footer_social">
-                                <a href="#" class="inner_links"><svg width="30" height="30" viewBox="0 0 30 30"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M25.8871 4.56812C25.8871 4.56812 28.3154 3.62124 28.113 5.9208C28.0456 6.86769 27.4385 10.1817 26.9663 13.7664L25.3474 24.3849C25.3474 24.3849 25.2126 25.9405 23.9984 26.2111C22.7842 26.4816 20.963 25.2642 20.6257 24.9936C20.3559 24.7908 15.5667 21.7472 13.8804 20.2592C13.4082 19.8534 12.8686 19.0418 13.9478 18.0949L21.0304 11.3316C21.8399 10.5199 22.6493 8.62619 19.2766 10.9257L9.83319 17.351C9.83319 17.351 8.75394 18.0273 6.73038 17.4186L2.34589 16.0659C2.34589 16.0659 0.727007 15.0514 3.49259 14.0369C10.2379 10.8581 18.5347 7.61162 25.8871 4.56812Z"
-                                            fill="auto" />
-                                    </svg>
-                                </a>
-                                <a href="#" class="inner_links"><svg width="30" height="30" viewBox="0 0 30 30"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_72_135)">
-                                            <path
-                                                d="M26.703 18.4468C26.703 18.4468 29.1285 20.8423 29.7285 21.9508C29.7402 21.9668 29.7493 21.9845 29.7555 22.0033C30 22.4128 30.06 22.7338 29.94 22.9708C29.7375 23.3623 29.052 23.5588 28.8195 23.5753H24.5325C24.234 23.5753 23.613 23.4973 22.857 22.9753C22.2795 22.5718 21.705 21.9073 21.1485 21.2578C20.3175 20.2933 19.599 19.4563 18.8715 19.4563C18.7796 19.4561 18.6884 19.4713 18.6015 19.5013C18.051 19.6753 17.352 20.4598 17.352 22.5493C17.352 23.2033 16.836 23.5753 16.4745 23.5753H14.511C13.842 23.5753 10.359 23.3413 7.27051 20.0848C3.48601 16.0978 0.087013 8.09982 0.054013 8.02932C-0.157487 7.51182 0.286513 7.22982 0.766513 7.22982H5.09551C5.67601 7.22982 5.86501 7.58082 5.99701 7.89582C6.15001 8.25732 6.71701 9.70332 7.64701 11.3278C9.15301 13.9708 10.0785 15.0463 10.818 15.0463C10.9569 15.0467 11.0935 15.0105 11.214 14.9413C12.18 14.4103 12 10.9603 11.955 10.2493C11.955 10.1113 11.9535 8.70882 11.4585 8.03082C11.1045 7.54482 10.5015 7.35582 10.137 7.28682C10.2345 7.14582 10.4415 6.92982 10.707 6.80232C11.3685 6.47232 12.564 6.42432 13.7505 6.42432H14.409C15.696 6.44232 16.029 6.52482 16.497 6.64332C17.439 6.86832 17.457 7.47882 17.3745 9.55782C17.3505 10.1518 17.325 10.8208 17.325 11.6083C17.325 11.7763 17.3175 11.9638 17.3175 12.1543C17.289 13.2208 17.2515 14.4223 18.0045 14.9158C18.1022 14.9767 18.2149 15.0089 18.33 15.0088C18.591 15.0088 19.3725 15.0088 21.492 11.3713C22.422 9.76482 23.142 7.87032 23.1915 7.72782C23.2335 7.64832 23.3595 7.42482 23.5125 7.33482C23.6214 7.27691 23.7433 7.24798 23.8665 7.25082H28.959C29.514 7.25082 29.8905 7.33482 29.964 7.54482C30.087 7.88532 29.94 8.92482 27.615 12.0688C27.2235 12.5923 26.88 13.0453 26.5785 13.4413C24.471 16.2073 24.471 16.3468 26.703 18.4468Z"
-                                                fill="auto" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_72_135">
-                                                <rect width="30" height="30" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </a>
-                                <a href="#" class="inner_links"><svg width="30" height="30" viewBox="0 0 30 30"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_72_138)">
-                                            <path
-                                                d="M15 0C10.9229 0 10.4147 0.0196875 8.81914 0.0871875C7.21695 0.165937 6.1332 0.414375 5.17695 0.785625C4.1907 1.17188 3.3507 1.68469 2.52102 2.51906C1.6857 3.34875 1.1682 4.18875 0.787578 5.175C0.416328 6.13125 0.167891 7.215 0.0891407 8.81719C0.0169532 10.4137 0.00195312 10.9209 0.00195312 14.9981C0.00195312 19.0753 0.0216407 19.5834 0.0891407 21.1791C0.167891 22.7766 0.416328 23.865 0.787578 24.8212C1.17383 25.8075 1.68664 26.6475 2.52102 27.4772C3.3507 28.3125 4.1907 28.83 5.17695 29.2106C6.1332 29.5772 7.22164 29.8303 8.81914 29.9091C10.4157 29.9813 10.9229 29.9963 15 29.9963C19.0772 29.9963 19.5854 29.9766 21.181 29.9091C22.7785 29.8303 23.8669 29.5763 24.8232 29.2106C25.8094 28.8244 26.6494 28.3116 27.4791 27.4772C28.3144 26.6475 28.8319 25.8122 29.2125 24.8212C29.5791 23.865 29.8322 22.7766 29.911 21.1791C29.9832 19.5825 29.9982 19.0753 29.9982 14.9981C29.9982 10.9209 29.9785 10.4128 29.911 8.81719C29.8322 7.21969 29.5782 6.12563 29.2125 5.175C28.8263 4.18875 28.3135 3.34875 27.4791 2.51906C26.6494 1.68375 25.8141 1.16625 24.8232 0.785625C23.8669 0.414375 22.7785 0.165937 21.181 0.0871875C19.5844 0.015 19.0772 0 15 0ZM15 2.7C19.0041 2.7 19.4822 2.71969 21.0647 2.78719C22.5244 2.85563 23.3194 3.09938 23.8472 3.30562C24.5513 3.57844 25.0435 3.90094 25.576 4.42781C26.0982 4.95 26.4207 5.44781 26.6935 6.15188C26.8997 6.67969 27.1435 7.47469 27.2119 8.93437C27.2794 10.5169 27.2991 10.9959 27.2991 14.9991C27.2991 19.0022 27.2794 19.4813 27.2063 21.0638C27.1275 22.5234 26.8838 23.3184 26.6785 23.8463C26.3944 24.5503 26.0775 25.0425 25.5544 25.575C25.0266 26.0972 24.5241 26.4197 23.8257 26.6925C23.3044 26.8988 22.4982 27.1425 21.0329 27.2109C19.4419 27.2784 18.9732 27.2981 14.9588 27.2981C10.9444 27.2981 10.4766 27.2784 8.88383 27.2053C7.42414 27.1266 6.61883 26.8828 6.09102 26.6775C5.37852 26.3934 4.89008 26.0766 4.36695 25.5534C3.83914 25.0256 3.50352 24.5231 3.24477 23.8247C3.03477 23.3034 2.79477 22.4972 2.71695 21.0319C2.66352 19.4597 2.6382 18.9722 2.6382 14.9766C2.6382 10.9828 2.66352 10.4944 2.71695 8.9025C2.79477 7.43719 3.03477 6.63281 3.24477 6.10969C3.50352 5.39625 3.84008 4.90875 4.36695 4.38094C4.88914 3.85875 5.37852 3.52125 6.09102 3.25688C6.61883 3.05156 7.40445 2.80781 8.86977 2.73469C10.4607 2.6775 10.9294 2.65688 14.9382 2.65688L15 2.7ZM15 7.30031C10.7429 7.30031 7.30039 10.7475 7.30039 15C7.30039 19.2572 10.7475 22.6997 15 22.6997C19.2572 22.6997 22.6997 19.2525 22.6997 15C22.6997 10.7428 19.2525 7.30031 15 7.30031ZM15 19.9997C12.2363 19.9997 10.0004 17.7638 10.0004 15C10.0004 12.2362 12.2363 10.0003 15 10.0003C17.7638 10.0003 19.9997 12.2362 19.9997 15C19.9997 17.7638 17.7638 19.9997 15 19.9997ZM24.81 6.99281C24.81 7.98938 23.9991 8.79375 23.0072 8.79375C22.0107 8.79375 21.2063 7.98844 21.2063 6.99281C21.2063 6.00187 22.0163 5.19562 23.0072 5.19562C23.9982 5.19562 24.81 6.00187 24.81 6.99281Z"
-                                                fill="auto" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_72_138">
-                                                <rect width="30" height="30" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </a>
-                            </div>
-                            <a href="#" class="my_link">Заазать сайт</a>
-                        </div>
+.slick-next {
+  right: 0;
+}
+[dir=rtl] .slick-next {
+  right: auto;
+}
+.slick-next:before {
+  content: "→";
+}
+[dir=rtl] .slick-next:before {
+  content: "←";
+}
 
-                    </div>
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px;
+}
 
-                </div>
-            </footer>
-        </div>
-    </div>
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+.slick-dots li button {
+  border: 0;
+  background: transparent;
+  display: block;
+  height: 20px;
+  width: 20px;
+  outline: none;
+  line-height: 0px;
+  font-size: 0px;
+  color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+.slick-dots li button:hover, .slick-dots li button:focus {
+  outline: none;
+}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+  opacity: 1;
+}
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "•";
+  width: 20px;
+  height: 20px;
+  font-family: "slick";
+  font-size: 6px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  opacity: 0.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before {
+  color: black;
+  opacity: 0.75;
+}
 
-    <script src="https://code.jquery.com/jquery-3.6.3.js"
-        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-    <script src="js/slick.js" defer></script>
+li.slick-active > .node {
+  box-shadow: 0px 0px 3px 2px rgba(85, 205, 66, 0.8);
+  background-color: #55CD42;
+}
 
-    <script src="js/app.js"></script>
-</body>
+li.active > .node {
+  box-shadow: 0px 0px 3px 2px rgba(85, 205, 66, 0.8);
+  background-color: #55CD42;
+}
 
-</html>
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --font-sans: "Rubik", sans-serif;
+  --font-serif: "Cardo", serif;
+}
+
+.programm_info {
+  width: 700px;
+  overflow: hidden;
+  padding-top: 16px;
+}
+
+.programm_box {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+  background-color: rgb(78, 77, 77);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  height: 500px;
+}
+.programm_box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+.programm_box:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, hsla(0deg, 0%, 0%, 0) 0%, hsla(0deg, 0%, 0%, 0.009) 11.7%, hsla(0deg, 0%, 0%, 0.034) 22.1%, hsla(0deg, 0%, 0%, 0.072) 31.2%, hsla(0deg, 0%, 0%, 0.123) 39.4%, hsla(0deg, 0%, 0%, 0.182) 46.6%, hsla(0deg, 0%, 0%, 0.249) 53.1%, hsla(0deg, 0%, 0%, 0.32) 58.9%, hsla(0deg, 0%, 0%, 0.394) 64.3%, hsla(0deg, 0%, 0%, 0.468) 69.3%, hsla(0deg, 0%, 0%, 0.54) 74.1%, hsla(0deg, 0%, 0%, 0.607) 78.8%, hsla(0deg, 0%, 0%, 0.668) 83.6%, hsla(0deg, 0%, 0%, 0.721) 88.7%, hsla(0deg, 0%, 0%, 0.762) 94.1%, hsla(0deg, 0%, 0%, 0.79) 100%);
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+
+.slick-slide {
+  max-width: 700px;
+  height: auto;
+  position: relative;
+  border-radius: 10px;
+}
+.slick-slide:nth-child(1) .programm_box:before {
+  background-image: url(../img/1.jpg);
+  background-position: center;
+}
+.slick-slide:nth-child(2) .programm_box:before {
+  background-image: url(../img/2.jpg);
+  background-position: center;
+}
+.slick-slide:nth-child(3) .programm_box:before {
+  background-image: url(../img/3.jpg);
+  background-position: center;
+}
+.slick-slide:nth-child(4) .programm_box:before {
+  background-image: url(../img/4.jpg);
+  background-position: center;
+}
+.slick-slide:nth-child(5) .programm_box:before {
+  background-image: url(../img/5.jpg);
+  background-position: center;
+}
+.slick-slide:nth-child(6) .programm_box:before {
+  background-image: url(../img/6.jpg);
+  background-position: center;
+}
+.slick-slide:nth-child(7) .programm_box:before {
+  background-image: url(../img/7.jpg);
+  background-position: center;
+}
+.slick-slide:nth-child(8) .programm_box:before {
+  background-image: url(../img/8.jpg);
+  background-position: center;
+}
+
+.programm_more {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+.programm_more > * + * {
+  margin-top: 1rem;
+}
+
+.more_title {
+  font-family: "Overpass";
+  font-weight: bold;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 52px;
+  letter-spacing: 0.0175em;
+  text-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.more_text {
+  font-family: "Overpass";
+  line-height: 42px;
+  letter-spacing: 0.0175em;
+  font-size: 20px;
+  text-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (hover: hover) {
+  .programm_box:after {
+    transform: translateY(0);
+  }
+  .programm_more {
+    transform: translateY(100%);
+  }
+  .programm_more > *:not(.more_title) {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+  }
+  .programm_box:hover,
+.programm_box:focus-within {
+    align-items: center;
+  }
+  .programm_box:hover:before,
+.programm_box:focus-within:before {
+    transform: translateY(-4%);
+  }
+  .programm_box:hover:after,
+.programm_box:focus-within:after {
+    transform: translateY(-50%);
+  }
+  .programm_box:hover .programm_more,
+.programm_box:focus-within .programm_more {
+    transform: translateY(32px);
+  }
+  .programm_box:hover .programm_more > *:not(.more_title),
+.programm_box:focus-within .programm_more > *:not(.more_title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+  }
+  .programm_box:focus-within:before, .programm_box:focus-within:after,
+.programm_box:focus-within .programm_more,
+.programm_box:focus-within .programm_more > *:not(.more_title) {
+    transition-duration: 0s;
+  }
+}
+.mode {
+  position: relative;
+  line-height: 26px;
+  cursor: pointer;
+}
+.mode:not(:first-child)::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  display: block;
+  top: -52px;
+  background-color: #d7d7d7;
+  height: 60px;
+  width: 4px;
+  margin-left: 8px;
+  transition: all 800ms ease;
+}
+.mode.slick-active:not(:first-child)::before {
+  background-color: #55CD42;
+}
+.mode.active:not(:first-child)::before {
+  background-color: #55CD42;
+}
+.mode .node {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: all 800ms ease;
+  position: absolute;
+  top: 0;
+}
+
+li {
+  line-height: 1px;
+  list-style: none;
+}
+li p {
+  display: inline-block;
+  margin-left: 40px;
+  color: white;
+  position: relative;
+  cursor: pointer;
+  font-family: "Overpass";
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+}
+
+.green {
+  background-color: #55CD42;
+}
+
+.grey {
+  background-color: #d7d7d7;
+}
+
+.slick-ds {
+  position: absolute;
+  top: 0;
+  left: -50px;
+}
+
+.progress {
+  padding: 0;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+.progress button {
+  display: none !important;
+}
+
+html {
+  overflow: hidden;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Russo One";
+  background-color: #171515;
+  font-size: 24px;
+  color: #FFFFFF;
+  scroll-behavior: smooth;
+}
+
+.none {
+  display: none;
+}
+
+.all {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+@media (pointer: fine) {
+  .all::-webkit-scrollbar {
+    width: 15px;
+    z-index: 1;
+  }
+  .all::-webkit-scrollbar-track {
+    background: #1d1f1c;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  .all::-webkit-scrollbar-thumb {
+    background: #4bb53b;
+    border-radius: 8px;
+    border: 3px solid #1d1f1c;
+  }
+}
+.logo {
+  z-index: 2;
+}
+
+.preloader_con {
+  height: 100vh;
+  transition: 0.4s linear;
+}
+.preloader_con.preloader-remove {
+  height: 0vh;
+}
+
+.preloader {
+  display: block;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 30px auto;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #337AB7;
+  -webkit-animation: preloader-5-spin 2s linear infinite;
+          animation: preloader-5-spin 2s linear infinite;
+  top: 27%;
+  transition: 0.4s linear;
+}
+.preloader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #BFE2FF;
+  -webkit-animation: preloader-5-spin 3s linear infinite;
+          animation: preloader-5-spin 3s linear infinite;
+}
+.preloader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #337AB7;
+  -webkit-animation: preloader-5-spin 1.5s linear infinite;
+          animation: preloader-5-spin 1.5s linear infinite;
+}
+.preloader.preloader-remove {
+  top: 0;
+  opacity: 0;
+  z-index: -10;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border: 0px;
+  overflow: hidden;
+}
+
+@-webkit-keyframes preloader-5-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-5-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.parallax {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  width: 100vw;
+  transform-style: inherit;
+  box-sizing: border-box;
+}
+
+.parallax::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  left: -13px;
+  transform-origin: center;
+  min-height: 100vh;
+  z-index: -1;
+  background-position: center;
+  background-image: url(../img/moution.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateZ(-1px) scale(2);
+}
+
+.content {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  background-color: #171515;
+  scroll-behavior: smooth;
+}
+
+.title {
+  line-height: 52px;
+  letter-spacing: 0.0175em;
+  font-size: 24px;
+  text-shadow: 4px 6px 7px rgba(0, 0, 0, 0.25);
+  display: inline;
+  position: relative;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  border-bottom: solid 12px #55CD42;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
+  z-index: -1;
+}
+.title.left {
+  text-align: left;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.burger {
+  display: block;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+.burger input {
+  display: none;
+}
+.burger path {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  --length: 24;
+  --offset: -38;
+  stroke-dasharray: var(--length) var(--total-length);
+  stroke-dashoffset: var(--offset);
+  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.burger circle {
+  fill: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: 0.1s linear;
+}
+.burger .cross input:checked + svg .line--1,
+.burger .cross input:checked + svg .line--3 {
+  --length: 22.627416998;
+}
+.burger .cross input:checked + svg .line--2 {
+  --length: 0;
+}
+.burger .debug {
+  display: none;
+}
+
+.menu--3 {
+  display: none;
+}
+.menu--3 .line--1,
+.menu--3 .line--3 {
+  --total-length: 126.38166809082031;
+}
+.menu--3 .line--2 {
+  --total-length: 80;
+}
+.menu--3 input:checked + svg .line--1,
+.menu--3 input:checked + svg .line--3 {
+  --offset: -109.1770175568;
+}
+
+.back input:checked + svg .line--1,
+.back input:checked + svg .line--3 {
+  --length: 8.602325267;
+}
+
+header {
+  display: flex;
+  padding: 60px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_item {
+  display: flex;
+  -moz-column-gap: 71px;
+       column-gap: 71px;
+}
+
+.header_links {
+  font-size: 18px;
+  line-height: 19px;
+  color: #FFFFFF;
+  transition: 0.2s linear;
+}
+.header_links:hover {
+  color: #55CD42;
+}
+.header_links.active {
+  color: #55CD42;
+}
+
+.hed2 {
+  padding: 36px 0;
+  display: none;
+  scroll-behavior: smooth;
+}
+@media (min-width: 770px) {
+  .hed2.fixed {
+    display: block;
+    position: fixed;
+    -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+    z-index: 1;
+    left: 0;
+    top: -2px;
+    width: 100%;
+  }
+}
+@media (pointer: fine) {
+  .hed2.fixed {
+    width: calc(100% - 15px);
+  }
+}
+.hed2 .container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.number_links {
+  font-size: 18px;
+  line-height: 19px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.inner_position_el {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inner_block {
+  margin-top: 100px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 46px;
+}
+
+.title_main {
+  font-size: 46px;
+  line-height: 55px;
+  letter-spacing: 0.0175em;
+  color: #FFFFFF;
+  max-width: 700px;
+}
+
+.text_main {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 52px;
+  letter-spacing: 0.0195em;
+  color: #F7F7F7;
+  max-width: 800px;
+  padding-bottom: 24px;
+}
+
+.btn_order {
+  display: inline;
+  padding: 22px 52px;
+  background-color: #55CD42;
+  border-radius: 10px;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
+  letter-spacing: 0.0175em;
+  color: #1A2E1D;
+  transition: 0.2s linear;
+}
+.btn_order:hover {
+  background-color: #1A2E1D;
+  color: #55CD42;
+}
+
+.inner_social {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 8px;
+  background: rgba(9, 9, 9, 0.3803921569);
+  border-radius: 10px;
+  margin-right: 178px;
+}
+.inner_social svg {
+  max-height: 30px;
+  width: 30px;
+  fill: #d7d7d7;
+  display: block;
+  transition: 0.2s linear;
+}
+.inner_social svg:hover {
+  fill: #55CD42;
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.animate.show {
+  opacity: 1;
+  transition: all 1.4s;
+  transform: translateY(0%);
+}
+
+.wait {
+  position: relative;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+
+.wait_block {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wait_type {
+  text-align: left;
+}
+
+.wait_text {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 52px;
+  letter-spacing: 0.0175em;
+  color: #F7F7F7;
+  max-width: 580px;
+  padding-top: 44px;
+}
+.wait_text span {
+  color: #55CD42;
+}
+
+.wait_img img {
+  border-radius: 6px;
+  background-size: cover;
+  max-width: 455px;
+  height: 608px;
+}
+
+.blur {
+  position: absolute;
+  width: 400px;
+  height: 550px;
+  right: 10%;
+  top: 10%;
+  z-index: -2;
+  background: radial-gradient(52.02% 44.88% at 50.12% 55.12%, rgba(73, 137, 165, 0.85) 9.38%, rgba(186, 205, 66, 0.85) 48.44%, rgba(66, 86, 194, 0.85) 71.87%, rgba(85, 205, 66, 0.85) 88.13%, rgba(217, 217, 217, 0) 100%);
+  filter: blur(300px);
+}
+
+.water {
+  height: 100vh;
+  width: 100%;
+}
+
+.programm {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+.programm::before {
+  content: "";
+  background: url(../img/moution.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(12px) brightness(0.4);
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.arrows_block {
+  position: relative;
+  width: 150px;
+  transform: translateX(-50%);
+  bottom: -35px;
+  left: calc(50% - 16px);
+}
+
+.programm_container {
+  position: relative;
+  z-index: 3;
+  padding-top: 90px;
+  display: flex;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+  justify-content: space-around;
+}
+
+@-webkit-keyframes water2 {
+  0% {
+    background-position: -10% -10%;
+  }
+  100% {
+    background-position: 20% 100%;
+  }
+}
+
+@keyframes water2 {
+  0% {
+    background-position: -10% -10%;
+  }
+  100% {
+    background-position: 20% 100%;
+  }
+}
+.advantage {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+.advantage .title {
+  margin-bottom: 80px;
+}
+
+.advantage_item {
+  display: flex;
+  -moz-column-gap: 80px;
+       column-gap: 80px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 80px;
+}
+
+.advantage_items {
+  display: flex;
+  flex-direction: column;
+}
+
+.advantage_block {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 56px;
+       column-gap: 56px;
+  margin-left: 18px;
+}
+.advantage_block img {
+  height: 68px;
+  width: auto;
+}
+
+.advantage_text {
+  margin-top: 16px;
+  max-width: 330px;
+  font-family: "Overpass";
+  font-size: 18px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: 0.0175em;
+  color: #F7F7F7;
+}
+
+.price {
+  padding-bottom: 180px;
+  text-align: center;
+}
+.price .container {
+  overflow: hidden;
+}
+
+.price_item {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price_item_card {
+  overflow: hidden;
+  min-width: 351px;
+  height: 480px;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+.price_item_card:hover .price_items {
+  transform: scale(1.1);
+}
+.price_item_card:hover .price_items::before {
+  content: "";
+  background-color: black;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+  opacity: 0.5;
+}
+.price_item_card:hover .price_subtite {
+  opacity: 0;
+}
+.price_item_card:hover .price_text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.price_items {
+  font-family: "Overpass";
+  text-align: center;
+  font-size: 18px;
+  line-height: 52px;
+  display: block;
+  position: absolute;
+  inset: 0;
+  letter-spacing: 0.0175em;
+  background-color: black;
+  background: url("../img/tamak.png");
+  background-position: center;
+  background-size: cover;
+  transition: 0.3s ease-in-out;
+}
+.price_items::before {
+  content: "";
+  background-color: black;
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+}
+
+.price_title {
+  padding-top: 30px;
+  padding-bottom: 28px;
+  font-family: "Russo One";
+  font-size: 24px;
+  position: relative;
+  color: #F7F7F7;
+  z-index: 1;
+  position: relative;
+}
+.price_title::after {
+  content: "1000 ₽ с человека";
+  padding-top: 36px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 60px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0.0175em;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.price_subtite {
+  color: #FFFFFF;
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  bottom: 40px;
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 52px;
+  font-size: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.price_text {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  padding: 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.0175em;
+  color: #F7F7F7;
+}
+
+.delivery {
+  background: url("../img/moution.jpg") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  padding: 48px 0;
+}
+
+.services_title {
+  margin-top: 60px;
+  font-family: "Russo One";
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 0.0175em;
+  color: #F7F7F7;
+  text-align: left;
+}
+
+.order {
+  width: 539px;
+  height: 563px;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  border-radius: 6px;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 47px;
+  font-family: "Overpass";
+  font-style: normal;
+  line-height: 36px;
+  letter-spacing: 0.0175em;
+  text-align: center;
+}
+
+.order_value {
+  height: 69px;
+  width: 100%;
+  font-size: 15px;
+  border-radius: 6px;
+  text-align: center;
+  padding: 0 32px;
+  color: #657489;
+}
+
+.order_btn {
+  background-color: #55CD42;
+  height: 64px;
+  width: 100%;
+  font-family: "Russo One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.0175em;
+  color: #F7F7F7;
+}
+.order_btn.disable {
+  background-color: #353935;
+}
+
+.order_text {
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: #A5A5A5;
+  margin-top: 10px;
+}
+
+footer .header_links {
+  color: #A5A5A5;
+  font-size: 16px;
+}
+
+.footer_position {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer_links {
+  padding-top: 56px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.footer_social {
+  display: flex;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.footer_social svg {
+  width: 30px;
+  height: 30px;
+  fill: #d7d7d7;
+  transition: 0.2s linear;
+}
+.footer_social svg:hover {
+  fill: #55CD42;
+}
+
+.my_link {
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.0175em;
+  color: #55CD42;
+}
+
+@media (max-width: 1200px) {
+  .header_item {
+    -moz-column-gap: 48px;
+         column-gap: 48px;
+  }
+  .inner_block {
+    margin-top: 50px;
+  }
+  .text_main {
+    font-size: 24px;
+    max-width: 780px;
+  }
+  .inner_social {
+    margin-right: 90px;
+  }
+  .wait_text {
+    max-width: 440px;
+    font-size: 19px;
+  }
+  .programm_info {
+    width: 600px;
+  }
+  .programm_container {
+    -moz-column-gap: 36px;
+         column-gap: 36px;
+  }
+  .progress {
+    row-gap: 32px;
+  }
+  .advantage_text {
+    text-align: left;
+  }
+  .price_item {
+    -moz-column-gap: 90px;
+         column-gap: 90px;
+  }
+  .order {
+    row-gap: 32px;
+    height: 530px;
+    margin-top: 46px;
+  }
+}
+@media (max-width: 990px) and (min-width: 770px) {
+  .programm_info {
+    margin: 0 auto;
+    padding-top: 110px;
+    margin-bottom: 70px !important;
+    width: 700px;
+  }
+  .programm_container {
+    flex-direction: column-reverse;
+    padding-top: 55px;
+  }
+  .progress {
+    padding-top: 60px;
+    margin-top: 30px;
+    flex-direction: row;
+    row-gap: unset;
+    -moz-column-gap: 90px;
+         column-gap: 90px;
+    justify-content: center;
+  }
+  .mode:not(:first-child)::before {
+    width: 96px;
+    height: 4px;
+    top: 9px;
+    left: -86px;
+  }
+  .mode:nth-child(odd) p {
+    margin: 0;
+    position: absolute;
+    top: -46px;
+    left: -64px;
+    font-size: 16px;
+  }
+  .mode:first-child p {
+    left: -11px;
+  }
+  .mode:nth-child(even) p {
+    margin: 0;
+    position: absolute;
+    top: 32px;
+    left: 0px;
+    font-size: 16px;
+    left: -51px;
+  }
+  .more_title {
+    font-size: 22px;
+  }
+}
+@media (max-width: 990px) {
+  .hed2 {
+    padding: 22px 0;
+  }
+  .header_item {
+    -moz-column-gap: 32px;
+         column-gap: 32px;
+  }
+  .header_links {
+    font-size: 16px;
+  }
+  .number_links {
+    display: none;
+  }
+  .text_main {
+    font-size: 22px;
+    max-width: 536px;
+    line-height: 42px;
+  }
+  .btn_order {
+    font-size: 18px;
+    padding: 20px 48px;
+  }
+  .wait_block {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  .wait_img img {
+    max-width: 540px;
+    height: 570px;
+  }
+  .wait_text {
+    max-width: 100%;
+    padding-top: 29px;
+    padding-bottom: 40px;
+  }
+  .advantage {
+    padding-bottom: 90px;
+  }
+  .advantage_item {
+    flex-direction: column;
+    align-items: center;
+    -moz-column-gap: unset;
+         column-gap: unset;
+    row-gap: 40px;
+    padding-top: 50px;
+  }
+  .advantage_item .advantage_text {
+    max-width: 400px;
+    text-align: center;
+  }
+  .arrows_block {
+    position: absolute;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 150px;
+    left: calc(50% - 16px);
+  }
+  .price {
+    padding-bottom: 90px;
+  }
+  .price_item {
+    margin-top: 50px;
+    -moz-column-gap: 36px;
+         column-gap: 36px;
+  }
+  .price_item_card {
+    min-width: 330px;
+    height: 430px;
+  }
+  .price_item_card:hover .price_text {
+    transform: translateY(-10%);
+  }
+  .delivery {
+    padding: 20px 0;
+  }
+  .order {
+    padding: 0 20px;
+    height: 480px;
+  }
+  .services_title {
+    margin-top: 40px;
+    font-size: 24px;
+  }
+  footer .footer_position {
+    padding: 16px 0;
+  }
+  footer .header_item {
+    flex-direction: column;
+    row-gap: 16px;
+  }
+}
+@media (max-width: 770px) {
+  .menu--3 {
+    display: block;
+    position: absolute;
+    left: 16px;
+    z-index: 2;
+    top: 12px;
+    transform: scale(1.2);
+    border-radius: 50%;
+    -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+  }
+  .menu--3.active {
+    z-index: 2;
+  }
+  .hed2 {
+    display: block;
+    padding: 0;
+  }
+  .hed2 .logo {
+    display: none;
+  }
+  .hed2.active .number_links {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    /* bottom: 0; */
+    top: 570px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .hed2.fixed .logo {
+    margin: 0 auto;
+  }
+  .inner_position_el {
+    -moz-column-gap: 32px;
+         column-gap: 32px;
+    justify-content: unset;
+  }
+  .inner_social {
+    margin-right: 0;
+  }
+  .header_item {
+    display: grid;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    padding-top: 130px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: 100%;
+    background-color: #000;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: 0.3s linear;
+    z-index: 1;
+  }
+  .header_item.active {
+    transform: translateX(0%);
+  }
+  .header_item.active .header_links {
+    font-size: 22px;
+    display: inline-grid;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .header_item .header_items {
+    height: 100%;
+    width: 100%;
+  }
+  .inner_block {
+    margin-top: 70px;
+  }
+  .parallax header {
+    padding: 24px 0;
+    justify-content: end;
+  }
+  .wait {
+    padding-top: 50px;
+  }
+  .wait_img img {
+    height: 500px;
+    max-width: 100%;
+  }
+  .left::after {
+    border-bottom: unset;
+  }
+  .wait_text {
+    padding-top: 16px;
+    line-height: 46px;
+  }
+  .programm_container {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 50px;
+    padding-top: 50px;
+  }
+  .progress {
+    align-items: center;
+    row-gap: 52px;
+  }
+  .programm_info {
+    max-width: 100%;
+  }
+  .mode::before {
+    margin-left: 0 !important;
+  }
+  .mode .node {
+    left: -8px;
+  }
+  .mode:nth-child(even) p {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    position: absolute;
+    left: 24px;
+    font-size: 16px;
+  }
+  .mode:nth-child(odd) p {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    position: absolute;
+    right: 22px;
+    font-size: 16px;
+  }
+  .slick-dotted.slick-slider {
+    margin-bottom: 70px;
+  }
+  .advantage {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+  .advantage_item .advantage_text {
+    text-align: left;
+  }
+  .advantage_block {
+    margin-left: 0;
+  }
+  .advantage_block img {
+    height: 57px;
+  }
+  .delivery .container {
+    max-width: 100%;
+  }
+  .price_item {
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+    overflow-x: auto;
+  }
+  .price_item::-webkit-scrollbar {
+    width: 0;
+  }
+  .price_item_card {
+    scroll-snap-align: start;
+  }
+  .order {
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 455px;
+    row-gap: 28px;
+  }
+  .order .order_value {
+    height: 62px;
+  }
+}
+@media (max-width: 565px) {
+  .container {
+    padding: 0 12px;
+    max-width: 100%;
+  }
+  .parallax header {
+    padding: 0;
+  }
+  .parallax .inner_block {
+    margin-top: 50px;
+    gap: 34px;
+  }
+  .title_main {
+    font-size: 42px;
+    line-height: 46px;
+  }
+  .text_main {
+    font-size: 20px;
+    max-width: 536px;
+    line-height: 34px;
+  }
+  .inner_position_el {
+    row-gap: 28px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .btn_order {
+    padding: 16px 36px;
+  }
+  .wait {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+  .blur {
+    width: 344px;
+    height: 387px;
+  }
+  .wait_block {
+    padding-top: 16px;
+  }
+  .wait_img img {
+    height: 440px;
+  }
+  .wait_text {
+    padding-top: 8px;
+    line-height: 38px;
+    padding-bottom: 28px;
+  }
+  .programm_container {
+    padding-top: 40px;
+  }
+  .programm_box {
+    height: 440px;
+  }
+  .programm_more {
+    transform: translateY(80%);
+  }
+  .programm_more:hover {
+    transform: translateY(0%);
+  }
+  .more_title {
+    font-size: 22px;
+  }
+  .more_text {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .slick-prev,
+.slick-next {
+    bottom: -30px;
+    height: 66px;
+    width: 60px;
+  }
+  .arrows_block {
+    bottom: 0;
+    left: 50%;
+  }
+  .advantage {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .advantage_item {
+    row-gap: 32px;
+    padding-top: 40px;
+  }
+  .advantage_block {
+    -moz-column-gap: 42px;
+         column-gap: 42px;
+  }
+  .advantage_title {
+    font-size: 20px;
+  }
+  .advantage_text {
+    margin-top: 12px;
+    line-height: 34px;
+  }
+  .delivery {
+    padding: 0;
+  }
+  .delivery .container {
+    margin: 0;
+    padding: 0;
+  }
+  .order {
+    width: 100%;
+    padding: 0 12px;
+    height: auto;
+    row-gap: 16px;
+    border-radius: 0;
+  }
+  .order_text {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 0;
+    padding-bottom: 12px;
+  }
+  .order_btn {
+    font-size: 16px;
+  }
+  .footer_position {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    padding: 0;
+  }
+  .footer_position .header_item {
+    display: none;
+  }
+  .footer_position .footer_links {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
