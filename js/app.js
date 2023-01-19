@@ -4,38 +4,42 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastScroll = 0;
     const header = document.querySelector('.hed2');
     let all = document.querySelector('.all');
-
+    // let hed = document.querySelectorAll('header');
+    // console.log(hed);
     let burger = document.querySelector('.menu');
-    let navigation = document.querySelector('.header_list');
+    let navigation = document.querySelector('.header_item');
     let checker = burger.querySelector('input[type=checkbox]');
 
     burger.addEventListener('change', () => {
         event.preventDefault();
         navigation.classList.toggle('active');
         burger.classList.toggle('active');
+        header.classList.toggle('active')
         navigation.childNodes.forEach(e => {
             e.addEventListener('click', () => {
                 navigation.classList.remove('active');
                 burger.classList.remove('active');
                 checker.checked = false;
+                header.classList.remove('active')
             })
         });
     })
 
-    // all.addEventListener('scroll', () => {
+    all.addEventListener('scroll', () => {
 
-    //     let scrollDistance = parseInt(all.scrollTop);
-    //     if (scrollDistance <= lastScroll && !header.classList.contains('fixed')) {
-    //         header.classList.add('fixed');
+        let scrollDistance = parseInt(all.scrollTop);
+        if (scrollDistance <= lastScroll && !header.classList.contains('fixed')) {
+            header.classList.add('fixed');
+    
 
-    //     } else if (scrollDistance > lastScroll && header.classList.contains('fixed')) {
-    //         header.classList.remove('fixed')
-    //     }
+        } else if (scrollDistance > lastScroll && header.classList.contains('fixed')) {
+            header.classList.remove('fixed')
+        }
 
-    //     (scrollDistance >= 350) ?
-    //         lastScroll = scrollDistance
-    //         : lastScroll = -1;
-    // })
+        (scrollDistance >= 350) ?
+            lastScroll = scrollDistance
+            : lastScroll = -300;
+    })
 
     $(window).ready(function () {
         $("[data-slider]").slick({
