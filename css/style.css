@@ -1717,9 +1717,8 @@ footer .header_links {
     padding: 0 12px;
     max-width: 100%;
   }
-  .menu--3 {
-    left: -12px;
-    position: relative;
+  .logo {
+    padding-top: 24px;
   }
   .parallax header {
     padding: 0;
